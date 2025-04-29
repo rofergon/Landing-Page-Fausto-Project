@@ -24,10 +24,10 @@ const StatsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Rendimiento en Números
+            Performance by the Numbers
           </h2>
           <p className="text-lg text-gray-300">
-            Métricas en tiempo real sobre el rendimiento y la actividad del agente HCS-10.
+            Real-time metrics on the performance and activity of the HCS-10 agent.
           </p>
         </div>
         
@@ -39,22 +39,22 @@ const StatsSection = () => {
                 <Users className="h-6 w-6 text-blue-400" />
               </div>
               <div className="bg-blue-500/10 px-2 py-1 rounded text-blue-400 text-xs font-medium">
-                En tiempo real
+                Real-time
               </div>
             </div>
             
-            <h3 className="text-lg font-medium text-gray-300 mb-2">Conexiones Activas</h3>
+            <h3 className="text-lg font-medium text-gray-300 mb-2">Active Connections</h3>
             <div className="flex items-end">
               <div className="text-4xl font-bold">{connections}</div>
               <div className="text-green-400 ml-2 mb-1 flex items-center text-sm">
                 <Activity className="h-4 w-4 mr-0.5" />
-                <span>Activas</span>
+                <span>Active</span>
               </div>
             </div>
             
             <div className="mt-4 h-10">
               <div className="flex justify-between text-xs text-gray-400 mb-1">
-                <span>Última hora</span>
+                <span>Last hour</span>
               </div>
               <div className="relative h-6 w-full">
                 {[...Array(24)].map((_, i) => (
@@ -80,22 +80,22 @@ const StatsSection = () => {
                 <MessageSquare className="h-6 w-6 text-purple-400" />
               </div>
               <div className="bg-purple-500/10 px-2 py-1 rounded text-purple-400 text-xs font-medium">
-                Hoy
+                Today
               </div>
             </div>
             
-            <h3 className="text-lg font-medium text-gray-300 mb-2">Mensajes Procesados</h3>
+            <h3 className="text-lg font-medium text-gray-300 mb-2">Processed Messages</h3>
             <div className="flex items-end">
               <div className="text-4xl font-bold">{messages}</div>
               <div className="text-purple-400 ml-2 mb-1 flex items-center text-sm">
                 <Activity className="h-4 w-4 mr-0.5" />
-                <span>+{Math.floor(messages/24)}/hora</span>
+                <span>+{Math.floor(messages/24)}/hour</span>
               </div>
             </div>
             
             <div className="mt-4 h-10">
               <div className="flex justify-between text-xs text-gray-400 mb-1">
-                <span>Últimas 24 horas</span>
+                <span>Last 24 hours</span>
               </div>
               <div className="relative h-6 w-full">
                 {[...Array(24)].map((_, i) => (
@@ -121,21 +121,21 @@ const StatsSection = () => {
                 <Clock className="h-6 w-6 text-teal-400" />
               </div>
               <div className="bg-teal-500/10 px-2 py-1 rounded text-teal-400 text-xs font-medium">
-                Promedio
+                Average
               </div>
             </div>
             
-            <h3 className="text-lg font-medium text-gray-300 mb-2">Tiempo de Respuesta</h3>
+            <h3 className="text-lg font-medium text-gray-300 mb-2">Response Time</h3>
             <div className="flex items-end">
               <div className="text-4xl font-bold">{responseTime.toFixed(1)}</div>
               <div className="text-teal-400 ml-2 mb-1 flex items-center text-sm">
-                <span>segundos</span>
+                <span>seconds</span>
               </div>
             </div>
             
             <div className="mt-4 h-10">
               <div className="flex justify-between text-xs text-gray-400 mb-1">
-                <span>Última hora</span>
+                <span>Last hour</span>
               </div>
               <div className="relative h-6 w-full">
                 {[...Array(24)].map((_, i) => (
@@ -161,7 +161,7 @@ const StatsSection = () => {
                 <Activity className="h-6 w-6 text-green-400" />
               </div>
               <div className="bg-green-500/10 px-2 py-1 rounded text-green-400 text-xs font-medium">
-                30 días
+                30 days
               </div>
             </div>
             
@@ -170,14 +170,14 @@ const StatsSection = () => {
               <div className="text-4xl font-bold">{uptime.toFixed(1)}%</div>
               <div className="text-green-400 ml-2 mb-1 flex items-center text-sm">
                 <Activity className="h-4 w-4 mr-0.5" />
-                <span>Estable</span>
+                <span>Stable</span>
               </div>
             </div>
             
             <div className="mt-4">
               <div className="flex justify-between text-xs text-gray-400 mb-1">
-                <span>Últimos 30 días</span>
-                <span>Objetivo: 99.9%</span>
+                <span>Last 30 days</span>
+                <span>Target: 99.9%</span>
               </div>
               <div className="w-full bg-slate-700/50 rounded-full h-2.5">
                 <div 
@@ -191,12 +191,12 @@ const StatsSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           <div className="md:col-span-2 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-            <h3 className="text-lg font-medium mb-4">Consultas SauceSwap Procesadas</h3>
+            <h3 className="text-lg font-medium mb-4">SauceSwap Queries Processed</h3>
             
             <div className="space-y-4">
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span>Consultas de Pools</span>
+                  <span>Pool Queries</span>
                   <span className="text-blue-400">187</span>
                 </div>
                 <div className="w-full bg-slate-700/50 rounded-full h-2">
@@ -206,7 +206,7 @@ const StatsSection = () => {
               
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span>Información de Tokens</span>
+                  <span>Token Information</span>
                   <span className="text-purple-400">135</span>
                 </div>
                 <div className="w-full bg-slate-700/50 rounded-full h-2">
@@ -216,7 +216,7 @@ const StatsSection = () => {
               
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span>Consultas de Precios</span>
+                  <span>Price Queries</span>
                   <span className="text-teal-400">212</span>
                 </div>
                 <div className="w-full bg-slate-700/50 rounded-full h-2">
@@ -226,7 +226,7 @@ const StatsSection = () => {
               
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span>Análisis de Liquidez</span>
+                  <span>Liquidity Analysis</span>
                   <span className="text-indigo-400">94</span>
                 </div>
                 <div className="w-full bg-slate-700/50 rounded-full h-2">
@@ -237,7 +237,7 @@ const StatsSection = () => {
           </div>
           
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-            <h3 className="text-lg font-medium mb-4">Distribución de Consultas</h3>
+            <h3 className="text-lg font-medium mb-4">Query Distribution</h3>
             
             <div className="relative h-52">
               <div className="absolute inset-0 flex items-center justify-center">
@@ -272,19 +272,19 @@ const StatsSection = () => {
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-teal-500 mr-2 rounded-sm"></div>
-                <span>Precios</span>
+                <span>Prices</span>
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-indigo-500 mr-2 rounded-sm"></div>
-                <span>Conexiones</span>
+                <span>Connections</span>
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-green-500 mr-2 rounded-sm"></div>
-                <span>Clima</span>
+                <span>Weather</span>
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-pink-500 mr-2 rounded-sm"></div>
-                <span>Otros</span>
+                <span>Others</span>
               </div>
             </div>
           </div>

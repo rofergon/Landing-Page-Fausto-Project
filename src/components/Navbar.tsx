@@ -26,21 +26,21 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Cpu className="h-8 w-8 text-teal-400" />
-            <span className="text-xl font-bold text-white">Agente HCS-10</span>
+            <span className="text-xl font-bold text-white">HCS-10 Agent</span>
           </div>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#tecnologia" className="text-gray-300 hover:text-white transition-colors">Tecnología</a>
+            <a href="#tecnologia" className="text-gray-300 hover:text-white transition-colors">Technology</a>
             <a href="#sauceswap" className="text-gray-300 hover:text-white transition-colors">SauceSwap</a>
-            <a href="#comunicacion" className="text-gray-300 hover:text-white transition-colors">Comunicación</a>
-            <a href="#seguridad" className="text-gray-300 hover:text-white transition-colors">Seguridad</a>
-            <a href="#precios" className="text-gray-300 hover:text-white transition-colors">Precios</a>
+            <a href="#comunicacion" className="text-gray-300 hover:text-white transition-colors">Communication</a>
+            <a href="#seguridad" className="text-gray-300 hover:text-white transition-colors">Security</a>
+            <a href="#precios" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
             <a 
               href="#conectar" 
               className="px-4 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-white font-medium transition-colors"
             >
-              Conectar
+              Connect
             </a>
           </nav>
 
@@ -63,7 +63,7 @@ const Navbar = () => {
               className="text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Tecnología
+              Technology
             </a>
             <a 
               href="#sauceswap" 
@@ -77,28 +77,28 @@ const Navbar = () => {
               className="text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Comunicación
+              Communication
             </a>
             <a 
               href="#seguridad" 
               className="text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Seguridad
+              Security
             </a>
             <a 
               href="#precios" 
               className="text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Precios
+              Pricing
             </a>
             <a 
               href="#conectar" 
               className="px-4 py-2 rounded-lg bg-teal-500 hover:bg-teal-400 text-white font-medium transition-colors inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Conectar
+              Connect
             </a>
           </nav>
         </div>

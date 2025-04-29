@@ -6,50 +6,50 @@ const UseCasesSection = () => {
   
   const cases = [
     {
-      title: "Trader DeFi",
+      title: "DeFi Trader",
       icon: <LineChart className="h-6 w-6 text-blue-400" />,
-      description: "Accede a información actualizada sobre pools, liquidez y precios para tomar decisiones informadas en tiempo real.",
+      description: "Access up-to-date information about pools, liquidity, and prices to make informed decisions in real time.",
       examples: [
-        "Monitoreo de precios y liquidez en tiempo real",
-        "Análisis de oportunidades de arbitraje",
-        "Alertas de cambios significativos en pools",
-        "Visualización del historial de precios"
+        "Real-time price and liquidity monitoring",
+        "Analysis of arbitrage opportunities",
+        "Alerts of significant changes in pools",
+        "Price history visualization"
       ],
       color: "blue"
     },
     {
-      title: "Desarrollador",
+      title: "Developer",
       icon: <Code className="h-6 w-6 text-purple-400" />,
-      description: "Integra el agente en tu aplicación para proporcionar datos actualizados de SauceSwap a tus usuarios.",
+      description: "Integrate the agent into your application to provide updated SauceSwap data to your users.",
       examples: [
-        "API para integración en aplicaciones web/móviles",
-        "Monitoreo de cambios en smart contracts",
-        "Notificaciones push para usuarios",
-        "Datos en tiempo real para dashboards"
+        "API for integration into web/mobile applications",
+        "Monitoring of changes in smart contracts",
+        "Push notifications for users",
+        "Real-time data for dashboards"
       ],
       color: "purple"
     },
     {
-      title: "Analista de Mercado",
+      title: "Market Analyst",
       icon: <BarChart3 className="h-6 w-6 text-teal-400" />,
-      description: "Monitorea las tendencias de liquidez y precios en el ecosistema de Hedera.",
+      description: "Monitor liquidity and price trends in the Hedera ecosystem.",
       examples: [
-        "Análisis de volumen y liquidez por pool",
-        "Seguimiento de tendencias de precios",
-        "Informes periódicos de actividad",
-        "Comparativas entre diferentes tokens"
+        "Analysis of volume and liquidity by pool",
+        "Price trend tracking",
+        "Periodic activity reports",
+        "Comparisons between different tokens"
       ],
       color: "teal"
     },
     {
-      title: "Educador Blockchain",
+      title: "Blockchain Educator",
       icon: <GraduationCap className="h-6 w-6 text-indigo-400" />,
-      description: "Utiliza el agente como herramienta educativa para explicar conceptos DeFi en Hedera.",
+      description: "Use the agent as an educational tool to explain DeFi concepts in Hedera.",
       examples: [
-        "Ejemplos prácticos de funcionamiento de DEX",
-        "Visualización de conceptos de liquidez y impermanent loss",
-        "Demostraciones de comunicación HCS en tiempo real",
-        "Casos de estudio para estudiantes"
+        "Practical examples of DEX operation",
+        "Visualization of liquidity concepts and impermanent loss",
+        "Demonstrations of real-time HCS communication",
+        "Case studies for students"
       ],
       color: "indigo"
     }
@@ -60,11 +60,11 @@ const UseCasesSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Aplicaciones Prácticas
+            Practical Applications
           </h2>
           <p className="text-lg text-gray-300">
-            Descubre cómo diferentes tipos de usuarios pueden aprovechar el 
-            Agente HCS-10 para mejorar su experiencia con SauceSwap y el ecosistema de Hedera.
+            Discover how different types of users can leverage the
+            HCS-10 Agent to enhance their experience with SauceSwap and the Hedera ecosystem.
           </p>
         </div>
         
@@ -104,7 +104,7 @@ const UseCasesSection = () => {
               </div>
               
               <div className="mt-8">
-                <h4 className="font-medium text-lg mb-4">Casos de Uso Específicos</h4>
+                <h4 className="font-medium text-lg mb-4">Specific Use Cases</h4>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {cases[activeTab].examples.map((example, index) => (
@@ -124,7 +124,7 @@ const UseCasesSection = () => {
               <div className="mt-8 p-4 bg-slate-900/50 rounded-lg border border-slate-700">
                 <div className="flex items-center mb-2">
                   <div className={`w-3 h-3 rounded-full bg-${cases[activeTab].color}-400 mr-2`}></div>
-                  <h4 className="font-medium">Ejemplo de Interacción</h4>
+                  <h4 className="font-medium">Interaction Example</h4>
                 </div>
                 
                 <div className="font-mono text-sm mt-3 bg-slate-900 p-3 rounded border border-slate-700 overflow-x-auto whitespace-pre">
@@ -137,13 +137,13 @@ const UseCasesSection = () => {
                       <span className="text-purple-400">Pool #123:</span> HBAR/SAUCE
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Liquidez:</span> $1.2M
+                      <span className="text-purple-400">Liquidity:</span> $1.2M
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Reservas:</span> 450K HBAR, 8.5M SAUCE
+                      <span className="text-purple-400">Reserves:</span> 450K HBAR, 8.5M SAUCE
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Variación 24h:</span> +2.4%
+                      <span className="text-purple-400">24h Change:</span> +2.4%
                     </div>
                   )}
                   
@@ -162,7 +162,7 @@ const UseCasesSection = () => {
                       <span className="text-purple-400">const</span> pools = <span className="text-blue-400">await</span> agent.<span className="text-yellow-400">getPools</span>({`{ limit: 10 }`});
                       {"\n"}
                       <span className="text-gray-400">&gt; </span>
-                      <span className="text-blue-400">app</span>.listen(<span className="text-green-400">"Pools actualizados"</span>, pools);
+                      <span className="text-blue-400">app</span>.listen(<span className="text-green-400">"Pools updated"</span>, pools);
                     </div>
                   )}
                   
@@ -172,16 +172,16 @@ const UseCasesSection = () => {
                       <span className="text-blue-400">getLiquidityTrend</span>(<span className="text-green-400">"HBAR"</span>, <span className="text-orange-400">30</span>)
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Análisis de liquidez para HBAR (30 días):</span>
+                      <span className="text-purple-400">Liquidity analysis for HBAR (30 days):</span>
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Tendencia:</span> +15.3% (incremento sostenido)
+                      <span className="text-purple-400">Trend:</span> +15.3% (sustained increase)
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Picos:</span> 12-may ($4.2M), 24-may ($3.8M)
+                      <span className="text-purple-400">Peaks:</span> May-12 ($4.2M), May-24 ($3.8M)
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Correlación precio/liquidez:</span> 0.72 (alta)
+                      <span className="text-purple-400">Price/liquidity correlation:</span> 0.72 (high)
                     </div>
                   )}
                   
@@ -191,22 +191,22 @@ const UseCasesSection = () => {
                       <span className="text-blue-400">explainConcept</span>(<span className="text-green-400">"impermanent loss"</span>, <span className="text-green-400">"HBAR/USDC"</span>)
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Impermanent Loss explicado con pool HBAR/USDC:</span>
+                      <span className="text-purple-400">Impermanent Loss explained with HBAR/USDC pool:</span>
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      Si hubieras mantenido 10,000 HBAR ($700) y 700 USDC
+                      If you had kept 10,000 HBAR ($700) and 700 USDC
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      vs. añadirlos al pool cuando HBAR=$0.07, y HBAR sube a $0.09:
+                      vs. adding them to the pool when HBAR=$0.07, and HBAR rises to $0.09:
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Valor como LP:</span> $1,431
+                      <span className="text-purple-400">Value as LP:</span> $1,431
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">Valor HODL:</span> $1,460
+                      <span className="text-purple-400">HODL value:</span> $1,460
                       {"\n"}
                       <span className="text-gray-400">&lt; </span>
-                      <span className="text-purple-400">IL calculado:</span> 1.98%
+                      <span className="text-purple-400">Calculated IL:</span> 1.98%
                     </div>
                   )}
                 </div>
@@ -216,7 +216,7 @@ const UseCasesSection = () => {
                     href="#conectar" 
                     className={`px-4 py-2 bg-${cases[activeTab].color}-600 hover:bg-${cases[activeTab].color}-500 rounded-lg text-white font-medium transition-colors`}
                   >
-                    Probar este caso de uso
+                    Try this use case
                   </a>
                 </div>
               </div>

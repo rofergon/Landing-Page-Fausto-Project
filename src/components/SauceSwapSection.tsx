@@ -35,12 +35,12 @@ const SauceSwapSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Información Completa de SauceSwap
+            Complete SauceSwap Information
           </h2>
           <p className="text-lg text-gray-300">
-            Accede a datos detallados del DEX SauceSwap directamente desde tu agente. 
-            Consulta pools de liquidez, detalles de tokens, precios actualizados y toda la 
-            información necesaria para tomar decisiones informadas en el ecosistema DeFi de Hedera.
+            Access detailed data from the SauceSwap DEX directly through your agent.
+            Check liquidity pools, token details, updated prices, and all the
+            information needed to make informed decisions in the Hedera DeFi ecosystem.
           </p>
         </div>
         
@@ -52,9 +52,9 @@ const SauceSwapSection = () => {
                 <BarChart3 className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Exploración de Pools</h3>
+                <h3 className="font-medium text-xl mb-2">Pool Exploration</h3>
                 <p className="text-gray-400">
-                  Exploración paginada de pools de SauceSwap con detalles completos sobre liquidez, tokens y reservas.
+                  Paginated exploration of SauceSwap pools with complete details on liquidity, tokens, and reserves.
                 </p>
               </div>
             </div>
@@ -64,9 +64,9 @@ const SauceSwapSection = () => {
                 <Search className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Información de Tokens</h3>
+                <h3 className="font-medium text-xl mb-2">Token Information</h3>
                 <p className="text-gray-400">
-                  Detalles completos sobre cualquier token incluyendo precio actual, descripción y enlaces sociales.
+                  Complete details about any token including current price, description, and social links.
                 </p>
               </div>
             </div>
@@ -76,9 +76,9 @@ const SauceSwapSection = () => {
                 <Database className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Búsqueda Avanzada</h3>
+                <h3 className="font-medium text-xl mb-2">Advanced Search</h3>
                 <p className="text-gray-400">
-                  Encuentra pools asociados a un token específico o busca por rangos de liquidez y volumen.
+                  Find pools associated with a specific token or search by liquidity and volume ranges.
                 </p>
               </div>
             </div>
@@ -88,9 +88,9 @@ const SauceSwapSection = () => {
                 <RefreshCw className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Datos en Tiempo Real</h3>
+                <h3 className="font-medium text-xl mb-2">Real-Time Data</h3>
                 <p className="text-gray-400">
-                  Información actualizada constantemente con compatibilidad para mainnet y testnet de Hedera.
+                  Constantly updated information with compatibility for Hedera mainnet and testnet.
                 </p>
               </div>
             </div>
@@ -101,7 +101,7 @@ const SauceSwapSection = () => {
             <div className="mb-4 flex items-center justify-between">
               <h3 className="font-semibold text-xl">Pool #{pools[currentPoolIndex].id}: {pools[currentPoolIndex].name}</h3>
               <span className="px-3 py-1 bg-blue-500/20 rounded-full text-blue-400 text-sm font-medium">
-                Liquidez: {pools[currentPoolIndex].liquidity}
+                Liquidity: {pools[currentPoolIndex].liquidity}
               </span>
             </div>
             
@@ -110,7 +110,7 @@ const SauceSwapSection = () => {
                 <div className="text-sm text-gray-400 mb-1">Token A</div>
                 <div className="font-medium text-lg">{pools[currentPoolIndex].tokenA}</div>
                 <div className="text-teal-400">{pools[currentPoolIndex].priceA}</div>
-                <div className="text-sm text-gray-400 mt-2">Reservas</div>
+                <div className="text-sm text-gray-400 mt-2">Reserves</div>
                 <div className="font-medium">{pools[currentPoolIndex].reserveA}</div>
               </div>
               
@@ -118,7 +118,7 @@ const SauceSwapSection = () => {
                 <div className="text-sm text-gray-400 mb-1">Token B</div>
                 <div className="font-medium text-lg">{pools[currentPoolIndex].tokenB}</div>
                 <div className="text-purple-400">{pools[currentPoolIndex].priceB}</div>
-                <div className="text-sm text-gray-400 mt-2">Reservas</div>
+                <div className="text-sm text-gray-400 mt-2">Reserves</div>
                 <div className="font-medium">{pools[currentPoolIndex].reserveB}</div>
               </div>
             </div>
@@ -143,7 +143,7 @@ const SauceSwapSection = () => {
             <div className="mt-4 flex justify-between text-xs text-gray-400">
               <span>12h</span>
               <span>6h</span>
-              <span>Ahora</span>
+              <span>Now</span>
             </div>
           </div>
         </div>

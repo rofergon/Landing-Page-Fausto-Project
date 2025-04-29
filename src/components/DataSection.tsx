@@ -33,12 +33,12 @@ const DataSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Información Actualizada
+            Updated Information
           </h2>
           <p className="text-lg text-gray-300">
-            Accede a datos en tiempo real del ecosistema Hedera, incluyendo precios de HBAR, 
-            información detallada de SauceSwap, y datos meteorológicos cuando los necesites. 
-            Mi agente se conecta directamente a APIs especializadas para brindarte la información más reciente.
+            Access real-time data from the Hedera ecosystem, including HBAR prices,
+            detailed SauceSwap information, and weather data when you need it.
+            My agent connects directly to specialized APIs to provide you with the most recent information.
           </p>
         </div>
         
@@ -53,31 +53,31 @@ const DataSection = () => {
               <input 
                 type="text" 
                 className="block w-full pl-12 pr-4 py-3 bg-slate-800/70 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-400"
-                placeholder="¿Qué información necesitas? Ej: precio de HBAR, pools de SauceSwap..."
+                placeholder="What information do you need? E.g.: HBAR price, SauceSwap pools..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
             
             <div className="mt-3 text-sm text-gray-400 flex items-center justify-center">
-              <span className="mr-2">Ejemplos de consultas:</span>
+              <span className="mr-2">Example queries:</span>
               <button 
                 className="px-3 py-1 bg-slate-800 rounded-full text-blue-400 mr-2 hover:bg-slate-700 transition-colors"
-                onClick={() => setSearchQuery("¿Cuál es el precio actual de HBAR?")}
+                onClick={() => setSearchQuery("What is the current price of HBAR?")}
               >
-                Precio HBAR
+                HBAR Price
               </button>
               <button 
                 className="px-3 py-1 bg-slate-800 rounded-full text-purple-400 mr-2 hover:bg-slate-700 transition-colors"
-                onClick={() => setSearchQuery("Muéstrame los pools de SauceSwap")}
+                onClick={() => setSearchQuery("Show me the SauceSwap pools")}
               >
-                Pools SauceSwap
+                SauceSwap Pools
               </button>
               <button 
                 className="px-3 py-1 bg-slate-800 rounded-full text-teal-400 hover:bg-slate-700 transition-colors"
-                onClick={() => setSearchQuery("Información del token SAUCE")}
+                onClick={() => setSearchQuery("SAUCE token information")}
               >
-                Info token
+                Token info
               </button>
             </div>
           </div>
@@ -89,9 +89,9 @@ const DataSection = () => {
                 <div>
                   <p className="text-gray-400 text-sm flex items-center">
                     <BarChart className="h-4 w-4 mr-1" />
-                    <span>Precios Actualizados</span>
+                    <span>Updated Prices</span>
                   </p>
-                  <h3 className="text-xl font-semibold mt-1">Tokens en SauceSwap</h3>
+                  <h3 className="text-xl font-semibold mt-1">Tokens on SauceSwap</h3>
                 </div>
                 <div className="bg-blue-500/20 p-2 rounded-lg">
                   <DollarSign className="h-6 w-6 text-blue-400" />
@@ -141,7 +141,7 @@ const DataSection = () => {
                 <div>
                   <p className="text-gray-400 text-sm flex items-center">
                     <BarChart className="h-4 w-4 mr-1" />
-                    <span>Liquidez SauceSwap</span>
+                    <span>SauceSwap Liquidity</span>
                   </p>
                   <h3 className="text-xl font-semibold mt-1">Top Pools</h3>
                 </div>
@@ -191,9 +191,9 @@ const DataSection = () => {
                 <div>
                   <p className="text-gray-400 text-sm flex items-center">
                     <Cloud className="h-4 w-4 mr-1" />
-                    <span>Información Meteorológica</span>
+                    <span>Weather Information</span>
                   </p>
-                  <h3 className="text-xl font-semibold mt-1">Clima en Ciudades</h3>
+                  <h3 className="text-xl font-semibold mt-1">Weather in Cities</h3>
                 </div>
                 <div className="bg-teal-500/20 p-2 rounded-lg">
                   <Cloud className="h-6 w-6 text-teal-400" />
@@ -203,34 +203,34 @@ const DataSection = () => {
               <div className="mt-6 space-y-3">
                 <div className="flex justify-between items-center p-3 bg-slate-700/50 rounded-lg">
                   <div>
-                    <div className="font-medium">Nueva York</div>
-                    <div className="text-sm text-gray-400">Estados Unidos</div>
+                    <div className="font-medium">New York</div>
+                    <div className="text-sm text-gray-400">United States</div>
                   </div>
                   <div className="text-right">
                     <div className="font-medium">23°C</div>
-                    <div className="text-sm text-gray-400">Parcialmente nublado</div>
+                    <div className="text-sm text-gray-400">Partly cloudy</div>
                   </div>
                 </div>
                 
                 <div className="flex justify-between items-center p-3 bg-slate-700/50 rounded-lg">
                   <div>
-                    <div className="font-medium">Londres</div>
-                    <div className="text-sm text-gray-400">Reino Unido</div>
+                    <div className="font-medium">London</div>
+                    <div className="text-sm text-gray-400">United Kingdom</div>
                   </div>
                   <div className="text-right">
                     <div className="font-medium">18°C</div>
-                    <div className="text-sm text-gray-400">Lluvia ligera</div>
+                    <div className="text-sm text-gray-400">Light rain</div>
                   </div>
                 </div>
                 
                 <div className="flex justify-between items-center p-3 bg-slate-700/50 rounded-lg">
                   <div>
-                    <div className="font-medium">Tokio</div>
-                    <div className="text-sm text-gray-400">Japón</div>
+                    <div className="font-medium">Tokyo</div>
+                    <div className="text-sm text-gray-400">Japan</div>
                   </div>
                   <div className="text-right">
                     <div className="font-medium">27°C</div>
-                    <div className="text-sm text-gray-400">Soleado</div>
+                    <div className="text-sm text-gray-400">Sunny</div>
                   </div>
                 </div>
               </div>
@@ -241,9 +241,9 @@ const DataSection = () => {
                 <div>
                   <p className="text-gray-400 text-sm flex items-center">
                     <Clock className="h-4 w-4 mr-1" />
-                    <span>Actividad Reciente</span>
+                    <span>Recent Activity</span>
                   </p>
-                  <h3 className="text-xl font-semibold mt-1">Últimas Consultas</h3>
+                  <h3 className="text-xl font-semibold mt-1">Latest Queries</h3>
                 </div>
                 <div className="bg-indigo-500/20 p-2 rounded-lg">
                   <Clock className="h-6 w-6 text-indigo-400" />
@@ -253,31 +253,31 @@ const DataSection = () => {
               <div className="mt-6 space-y-3">
                 <div className="p-3 bg-slate-700/50 rounded-lg">
                   <div className="flex items-center justify-between">
-                    <div className="font-medium">Precio de HBAR</div>
-                    <div className="text-xs text-gray-400">Hace 5 min</div>
+                    <div className="font-medium">HBAR Price</div>
+                    <div className="text-xs text-gray-400">5 min ago</div>
                   </div>
                   <div className="text-sm text-gray-300 mt-1">
-                    Consulta sobre el precio actual y tendencia de HBAR
+                    Query about the current price and trend of HBAR
                   </div>
                 </div>
                 
                 <div className="p-3 bg-slate-700/50 rounded-lg">
                   <div className="flex items-center justify-between">
-                    <div className="font-medium">Pools SauceSwap</div>
-                    <div className="text-xs text-gray-400">Hace 18 min</div>
+                    <div className="font-medium">SauceSwap Pools</div>
+                    <div className="text-xs text-gray-400">18 min ago</div>
                   </div>
                   <div className="text-sm text-gray-300 mt-1">
-                    Listado de pools con mayor liquidez en SauceSwap
+                    List of pools with highest liquidity in SauceSwap
                   </div>
                 </div>
                 
                 <div className="p-3 bg-slate-700/50 rounded-lg">
                   <div className="flex items-center justify-between">
-                    <div className="font-medium">Token SAUCE</div>
-                    <div className="text-xs text-gray-400">Hace 42 min</div>
+                    <div className="font-medium">SAUCE Token</div>
+                    <div className="text-xs text-gray-400">42 min ago</div>
                   </div>
                   <div className="text-sm text-gray-300 mt-1">
-                    Información detallada sobre el token SAUCE
+                    Detailed information about the SAUCE token
                   </div>
                 </div>
               </div>

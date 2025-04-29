@@ -9,13 +9,13 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-6">
               <Cpu className="h-8 w-8 text-blue-500 mr-2" />
-              <span className="text-xl font-bold text-white">Agente HCS-10</span>
+              <span className="text-xl font-bold text-white">HCS-10 Agent</span>
             </div>
             
             <p className="text-gray-400 mb-4">
-              Una solución inteligente para interactuar con el ecosistema 
-              de Hedera, SauceSwap y servicios DeFi mediante comunicación 
-              segura a través de HCS.
+              An intelligent solution for interacting with the Hedera
+              ecosystem, SauceSwap, and DeFi services through secure
+              communication via HCS.
             </p>
             
             <div className="flex space-x-4">
@@ -43,14 +43,14 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-semibold text-white mb-4">Documentación</h3>
+            <h3 className="font-semibold text-white mb-4">Documentation</h3>
             <ul className="space-y-3">
               <li>
                 <a 
                   href="#docs-hcs10" 
                   className="text-gray-400 hover:text-blue-400 transition-colors flex items-center"
                 >
-                  <span>Documentación HCS-10</span>
+                  <span>HCS-10 Documentation</span>
                   <ExternalLink className="h-3 w-3 ml-1" />
                 </a>
               </li>
@@ -86,21 +86,21 @@ const Footer = () => {
                   href="#docs-tutorials" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Tutoriales
+                  Tutorials
                 </a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-white mb-4">Recursos</h3>
+            <h3 className="font-semibold text-white mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
                 <a 
                   href="#recursos-iniciar" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Guía de Inicio
+                  Getting Started Guide
                 </a>
               </li>
               <li>
@@ -108,7 +108,7 @@ const Footer = () => {
                   href="#recursos-faq" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Preguntas Frecuentes
+                  Frequently Asked Questions
                 </a>
               </li>
               <li>
@@ -116,7 +116,7 @@ const Footer = () => {
                   href="#recursos-ejemplos" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Ejemplos de Uso
+                  Usage Examples
                 </a>
               </li>
               <li>
@@ -124,7 +124,7 @@ const Footer = () => {
                   href="#recursos-integracion" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Guía de Integración
+                  Integration Guide
                 </a>
               </li>
               <li>
@@ -132,21 +132,21 @@ const Footer = () => {
                   href="#recursos-politicas" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Políticas de Uso
+                  Usage Policies
                 </a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-white mb-4">Soporte</h3>
+            <h3 className="font-semibold text-white mb-4">Support</h3>
             <ul className="space-y-3">
               <li>
                 <a 
                   href="#soporte-contacto" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Contacto y Soporte
+                  Contact and Support
                 </a>
               </li>
               <li>
@@ -172,7 +172,7 @@ const Footer = () => {
                   href="#soporte-status" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Estado del Servicio
+                  Service Status
                 </a>
               </li>
               <li>
@@ -180,7 +180,7 @@ const Footer = () => {
                   href="#soporte-reportar" 
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Reportar un Error
+                  Report a Bug
                 </a>
               </li>
             </ul>
@@ -199,28 +199,28 @@ const Footer = () => {
               href="#terminos" 
               className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
             >
-              Términos de Servicio
+              Terms of Service
             </a>
             <a 
               href="#privacidad" 
               className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
             >
-              Política de Privacidad
+              Privacy Policy
             </a>
             <div className="flex items-center text-gray-400 text-sm">
               <Shield className="h-4 w-4 mr-1" />
-              <span>Seguridad Verificada</span>
+              <span>Verified Security</span>
             </div>
           </div>
         </div>
         
         <div className="mt-8 text-center">
           <p className="text-gray-500 text-sm">
-            Este agente es un servicio informativo y no constituye asesoramiento financiero. 
-            Las decisiones de trading son responsabilidad exclusiva del usuario.
+            This agent is an informational service and does not constitute financial advice.
+            Trading decisions are the sole responsibility of the user.
           </p>
           <p className="text-gray-600 text-xs mt-2">
-            &copy; 2025 Agente HCS-10. Todos los derechos reservados.
+            &copy; 2025 HCS-10 Agent. All rights reserved.
           </p>
         </div>
       </div>

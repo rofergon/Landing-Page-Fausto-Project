@@ -39,13 +39,13 @@ const TechnologySection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16 animate-on-scroll opacity-0">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Tecnología de Vanguardia
+            Cutting-Edge Technology
           </h2>
           <p className="text-lg text-gray-300">
-            Mi agente utiliza el estándar HCS-10 de Hedera para comunicación descentralizada, 
-            combinado con modelos avanzados de IA (GPT-4) para ofrecer respuestas inteligentes 
-            y contextuales. Toda la comunicación se realiza a través de tópicos HCS, garantizando 
-            transparencia y verificabilidad.
+            My agent uses Hedera's HCS-10 standard for decentralized communication,
+            combined with advanced AI models (GPT-4) to deliver intelligent
+            and contextual responses. All communication is conducted through HCS topics, ensuring
+            transparency and verifiability.
           </p>
         </div>
         
@@ -54,9 +54,9 @@ const TechnologySection = () => {
             <div className="bg-gradient-to-br from-blue-500 to-teal-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <Cpu className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Estándar HCS-10</h3>
+            <h3 className="text-xl font-semibold mb-2">HCS-10 Standard</h3>
             <p className="text-gray-300 mt-2 flex-grow">
-              Implementación completa del estándar HCS-10 para comunicación segura y descentralizada en el ecosistema Hedera.
+              Complete implementation of the HCS-10 standard for secure and decentralized communication in the Hedera ecosystem.
             </p>
           </div>
           
@@ -64,9 +64,9 @@ const TechnologySection = () => {
             <div className="bg-gradient-to-br from-purple-500 to-blue-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <Broadcast className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Mensajería Asincrónica</h3>
+            <h3 className="text-xl font-semibold mb-2">Asynchronous Messaging</h3>
             <p className="text-gray-300 mt-2 flex-grow">
-              Comunicación asincrónica a través de Hedera Consensus Service para garantizar la entrega confiable de mensajes.
+              Asynchronous communication through Hedera Consensus Service to ensure reliable message delivery.
             </p>
           </div>
           
@@ -74,9 +74,9 @@ const TechnologySection = () => {
             <div className="bg-gradient-to-br from-indigo-500 to-purple-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <BrainCircuit className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Integración con IA</h3>
+            <h3 className="text-xl font-semibold mb-2">AI Integration</h3>
             <p className="text-gray-300 mt-2 flex-grow">
-              Procesamiento de lenguaje natural mediante GPT-4 para brindar respuestas inteligentes y contextuales.
+              Natural language processing through GPT-4 to provide intelligent and contextual responses.
             </p>
           </div>
           
@@ -84,9 +84,9 @@ const TechnologySection = () => {
             <div className="bg-gradient-to-br from-cyan-500 to-indigo-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <Clock className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Memoria Contextual</h3>
+            <h3 className="text-xl font-semibold mb-2">Contextual Memory</h3>
             <p className="text-gray-300 mt-2 flex-grow">
-              Sistema de memoria para mantener el contexto de las conversaciones y proporcionar respuestas coherentes.
+              Memory system to maintain conversation context and provide coherent responses.
             </p>
           </div>
         </div>

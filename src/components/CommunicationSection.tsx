@@ -4,9 +4,9 @@ import { MessageSquare, CheckCircle, Lock, CornerDownRight } from 'lucide-react'
 const CommunicationSection = () => {
   const [activeDot, setActiveDot] = useState(0);
   const [messages, setMessages] = useState<{ text: string; sending: boolean; sent: boolean }[]>([
-    { text: "Solicitar información sobre SauceSwap", sending: false, sent: true },
-    { text: "Mostrar pools con mayor liquidez", sending: false, sent: true },
-    { text: "¿Cuál es el precio actual de HBAR?", sending: false, sent: false }
+    { text: "Request information about SauceSwap", sending: false, sent: true },
+    { text: "Show pools with highest liquidity", sending: false, sent: true },
+    { text: "What is the current price of HBAR?", sending: false, sent: false }
   ]);
 
   // Connection steps animation
@@ -52,13 +52,13 @@ const CommunicationSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Comunicación Segura y Directa
+            Secure and Direct Communication
           </h2>
           <p className="text-lg text-gray-300">
-            Mi agente permite establecer conexiones seguras con otros agentes HCS-10, 
-            facilitando la comunicación directa a través de la red Hedera. Todas las 
-            comunicaciones se realizan a través de tópicos HCS dedicados, garantizando 
-            autenticidad y trazabilidad.
+            My agent allows you to establish secure connections with other HCS-10 agents,
+            facilitating direct communication through the Hedera network. All
+            communications are conducted through dedicated HCS topics, ensuring
+            authenticity and traceability.
           </p>
         </div>
         
@@ -67,7 +67,7 @@ const CommunicationSection = () => {
           <div className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-8 border border-slate-700 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
             
-            <h3 className="text-xl font-semibold mb-6 relative z-10">Proceso de Conexión</h3>
+            <h3 className="text-xl font-semibold mb-6 relative z-10">Connection Process</h3>
             
             <div className="relative">
               <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-700 z-0"></div>
@@ -78,9 +78,9 @@ const CommunicationSection = () => {
                     <MessageSquare className="h-5 w-5" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-medium">Iniciar solicitud de conexión</h4>
+                    <h4 className="font-medium">Initiate connection request</h4>
                     <p className="text-sm text-gray-400 mt-1">
-                      El agente envía una solicitud de conexión a través de HCS
+                      The agent sends a connection request through HCS
                     </p>
                   </div>
                 </div>
@@ -90,9 +90,9 @@ const CommunicationSection = () => {
                     <CheckCircle className="h-5 w-5" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-medium">Aceptación automática</h4>
+                    <h4 className="font-medium">Automatic acceptance</h4>
                     <p className="text-sm text-gray-400 mt-1">
-                      Procesamiento y verificación de la solicitud
+                      Processing and verification of the request
                     </p>
                   </div>
                 </div>
@@ -102,9 +102,9 @@ const CommunicationSection = () => {
                     <Lock className="h-5 w-5" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-medium">Establecimiento de tópico compartido</h4>
+                    <h4 className="font-medium">Establishment of shared topic</h4>
                     <p className="text-sm text-gray-400 mt-1">
-                      Creación de un canal seguro de comunicación
+                      Creation of a secure communication channel
                     </p>
                   </div>
                 </div>
@@ -114,9 +114,9 @@ const CommunicationSection = () => {
                     <MessageSquare className="h-5 w-5" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-medium">Intercambio seguro de mensajes</h4>
+                    <h4 className="font-medium">Secure message exchange</h4>
                     <p className="text-sm text-gray-400 mt-1">
-                      Comunicación bidireccional a través de tópicos HCS
+                      Bidirectional communication through HCS topics
                     </p>
                   </div>
                 </div>
@@ -127,45 +127,45 @@ const CommunicationSection = () => {
           {/* Right side - Messaging capabilities */}
           <div className="space-y-8">
             <div className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-              <h3 className="text-xl font-semibold mb-4">Capacidades de Comunicación</h3>
+              <h3 className="text-xl font-semibold mb-4">Communication Capabilities</h3>
               
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <div className="bg-blue-500/20 p-1.5 rounded text-blue-400 mr-3 mt-0.5">
                     <CheckCircle className="h-4 w-4" />
                   </div>
-                  <span>Establecimiento automático de conexiones con otros agentes</span>
+                  <span>Automatic establishment of connections with other agents</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-blue-500/20 p-1.5 rounded text-blue-400 mr-3 mt-0.5">
                     <CheckCircle className="h-4 w-4" />
                   </div>
-                  <span>Aceptación y gestión inteligente de solicitudes de conexión</span>
+                  <span>Intelligent acceptance and management of connection requests</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-blue-500/20 p-1.5 rounded text-blue-400 mr-3 mt-0.5">
                     <CheckCircle className="h-4 w-4" />
                   </div>
-                  <span>Mensajería en tiempo real a través de tópicos HCS</span>
+                  <span>Real-time messaging through HCS topics</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-blue-500/20 p-1.5 rounded text-blue-400 mr-3 mt-0.5">
                     <CheckCircle className="h-4 w-4" />
                   </div>
-                  <span>Monitoreo continuo de mensajes entrantes</span>
+                  <span>Continuous monitoring of incoming messages</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-blue-500/20 p-1.5 rounded text-blue-400 mr-3 mt-0.5">
                     <CheckCircle className="h-4 w-4" />
                   </div>
-                  <span>Respuestas automatizadas basadas en IA</span>
+                  <span>AI-based automated responses</span>
                 </li>
               </ul>
             </div>
             
             {/* Chat simulation */}
             <div className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-              <h3 className="text-xl font-semibold mb-4">Simulación de Mensajes</h3>
+              <h3 className="text-xl font-semibold mb-4">Message Simulation</h3>
               
               <div className="space-y-4">
                 {messages.map((message, index) => (
@@ -179,14 +179,14 @@ const CommunicationSection = () => {
                       </div>
                       <div className="mt-1 text-xs text-gray-400 flex items-center">
                         {message.sending ? (
-                          <span>Enviando...</span>
+                          <span>Sending...</span>
                         ) : message.sent ? (
                           <>
                             <CheckCircle className="h-3 w-3 mr-1 text-green-400" />
-                            <span>Enviado a tópico 0.0.ZZZZZ</span>
+                            <span>Sent to topic 0.0.ZZZZZ</span>
                           </>
                         ) : (
-                          <span>Pendiente</span>
+                          <span>Pending</span>
                         )}
                       </div>
                     </div>

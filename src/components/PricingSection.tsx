@@ -14,12 +14,12 @@ const PricingSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Modelo de Uso Transparente
+            Transparent Usage Model
           </h2>
           <p className="text-lg text-gray-300">
-            El agente opera bajo un modelo transparente basado en HBAR. Cada consulta 
-            consume una pequeña cantidad de HBAR para cubrir los costos de la red Hedera, 
-            con tarifas predecibles y sin costos ocultos.
+            The agent operates under a transparent HBAR-based model. Each query
+            consumes a small amount of HBAR to cover Hedera network costs,
+            with predictable fees and no hidden costs.
           </p>
         </div>
         
@@ -27,15 +27,15 @@ const PricingSection = () => {
           {/* Basic plan */}
           <div className="bg-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700 overflow-hidden transition-all duration-300 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 flex flex-col">
             <div className="p-6 bg-gradient-to-br from-blue-900/30 to-blue-800/10">
-              <h3 className="text-xl font-semibold mb-2">Conexión Básica</h3>
+              <h3 className="text-xl font-semibold mb-2">Basic Connection</h3>
               <div className="flex items-end">
                 <div className="text-4xl font-bold">0.1</div>
                 <div className="ml-1 text-xl font-medium">ℏ</div>
-                <div className="text-sm text-gray-400 ml-2 mb-1">/conexión</div>
+                <div className="text-sm text-gray-400 ml-2 mb-1">/connection</div>
               </div>
               <p className="text-gray-300 mt-2 text-sm">
-                Perfecto para usuarios individuales que necesitan acceso ocasional 
-                a información de SauceSwap.
+                Perfect for individual users who need occasional
+                access to SauceSwap information.
               </p>
             </div>
             
@@ -44,28 +44,28 @@ const PricingSection = () => {
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Establecimiento de conexión con el agente</span>
+                <span>Connection establishment with the agent</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Consultas básicas sobre SauceSwap (0.01 ℏ/consulta)</span>
+                <span>Basic SauceSwap queries (0.01 ℏ/query)</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Información básica de tokens y precios</span>
+                <span>Basic token and price information</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Hasta 10 consultas por día</span>
+                <span>Up to 10 queries per day</span>
               </div>
               
               <div className="relative flex items-start">
@@ -76,12 +76,12 @@ const PricingSection = () => {
                     onMouseLeave={() => setShowTooltip(null)}
                   />
                 </div>
-                <span className="text-gray-400">Monitoreo continuo no incluido</span>
+                <span className="text-gray-400">Continuous monitoring not included</span>
                 
                 {showTooltip === 'basic' && (
                   <div className="absolute left-7 bottom-6 bg-slate-800 p-3 rounded-lg shadow-lg w-60 z-10 text-sm">
-                    El monitoreo continuo permite al agente supervisar constantemente el ecosistema 
-                    SauceSwap y alertarte sobre cambios importantes.
+                    Continuous monitoring allows the agent to constantly supervise the
+                    SauceSwap ecosystem and alert you about important changes.
                   </div>
                 )}
               </div>
@@ -92,7 +92,7 @@ const PricingSection = () => {
                 href="#conectar" 
                 className="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 rounded-lg text-white font-medium text-center transition-colors"
               >
-                Conectar Ahora
+                Connect Now
               </a>
             </div>
           </div>
@@ -104,15 +104,15 @@ const PricingSection = () => {
             </div>
             
             <div className="p-6 bg-gradient-to-br from-purple-900/30 to-purple-800/10">
-              <h3 className="text-xl font-semibold mb-2">Conexión Estándar</h3>
+              <h3 className="text-xl font-semibold mb-2">Standard Connection</h3>
               <div className="flex items-end">
                 <div className="text-4xl font-bold">0.5</div>
                 <div className="ml-1 text-xl font-medium">ℏ</div>
-                <div className="text-sm text-gray-400 ml-2 mb-1">/conexión</div>
+                <div className="text-sm text-gray-400 ml-2 mb-1">/connection</div>
               </div>
               <p className="text-gray-300 mt-2 text-sm">
-                Ideal para traders activos que necesitan información detallada 
-                y actualizada de SauceSwap.
+                Ideal for active traders who need detailed
+                and updated information from SauceSwap.
               </p>
             </div>
             
@@ -121,35 +121,35 @@ const PricingSection = () => {
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Todo lo incluido en Conexión Básica</span>
+                <span>Everything included in Basic Connection</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Consultas avanzadas (pools, tokens, análisis)</span>
+                <span>Advanced queries (pools, tokens, analysis)</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Información detallada de liquidez y reservas</span>
+                <span>Detailed liquidity and reserves information</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Hasta 50 consultas por día</span>
+                <span>Up to 50 queries per day</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Monitoreo básico (0.1 ℏ/día)</span>
+                <span>Basic monitoring (0.1 ℏ/day)</span>
               </div>
             </div>
             
@@ -158,7 +158,7 @@ const PricingSection = () => {
                 href="#conectar" 
                 className="block w-full py-3 px-4 bg-purple-600 hover:bg-purple-500 rounded-lg text-white font-medium text-center transition-colors"
               >
-                Conectar Ahora
+                Connect Now
               </a>
             </div>
           </div>
@@ -166,15 +166,15 @@ const PricingSection = () => {
           {/* Premium plan */}
           <div className="bg-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700 overflow-hidden transition-all duration-300 hover:border-teal-500/30 hover:shadow-lg hover:shadow-teal-500/5 flex flex-col">
             <div className="p-6 bg-gradient-to-br from-teal-900/30 to-teal-800/10">
-              <h3 className="text-xl font-semibold mb-2">Conexión Premium</h3>
+              <h3 className="text-xl font-semibold mb-2">Premium Connection</h3>
               <div className="flex items-end">
                 <div className="text-4xl font-bold">1.5</div>
                 <div className="ml-1 text-xl font-medium">ℏ</div>
-                <div className="text-sm text-gray-400 ml-2 mb-1">/conexión</div>
+                <div className="text-sm text-gray-400 ml-2 mb-1">/connection</div>
               </div>
               <p className="text-gray-300 mt-2 text-sm">
-                Para profesionales y aplicaciones que requieren monitoreo 
-                continuo y alertas personalizadas.
+                For professionals and applications that require continuous
+                monitoring and customized alerts.
               </p>
             </div>
             
@@ -183,35 +183,35 @@ const PricingSection = () => {
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Todo lo incluido en Conexión Estándar</span>
+                <span>Everything included in Standard Connection</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Consultas ilimitadas por día</span>
+                <span>Unlimited queries per day</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Monitoreo continuo 24/7 (0.3 ℏ/día)</span>
+                <span>24/7 continuous monitoring (0.3 ℏ/day)</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>Alertas personalizadas de precios y liquidez</span>
+                <span>Customized price and liquidity alerts</span>
               </div>
               
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-2 text-green-400">
                   <CheckCircle className="h-5 w-5" />
                 </div>
-                <span>API para integración con aplicaciones</span>
+                <span>API for application integration</span>
               </div>
             </div>
             
@@ -220,7 +220,7 @@ const PricingSection = () => {
                 href="#conectar" 
                 className="block w-full py-3 px-4 bg-teal-600 hover:bg-teal-500 rounded-lg text-white font-medium text-center transition-colors"
               >
-                Conectar Ahora
+                Connect Now
               </a>
             </div>
           </div>
@@ -233,33 +233,33 @@ const PricingSection = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-2">Beneficios de Sostenibilidad</h3>
+              <h3 className="text-xl font-semibold mb-2">Sustainability Benefits</h3>
               <p className="text-gray-300">
-                Las tarifas permiten mantener el servicio activo 24/7, garantizando 
-                actualizaciones constantes y acceso a la información más reciente del 
-                ecosistema SauceSwap y Hedera. Además, contribuyen al mantenimiento 
-                de la infraestructura y el desarrollo continuo de nuevas funcionalidades.
+                Fees allow maintaining the service active 24/7, ensuring
+                constant updates and access to the most recent information from the
+                SauceSwap and Hedera ecosystem. Additionally, they contribute to the maintenance
+                of infrastructure and continuous development of new features.
               </p>
               
               <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-slate-800/50 p-4 rounded-lg">
-                  <div className="font-medium mb-1">Transparencia Total</div>
+                  <div className="font-medium mb-1">Total Transparency</div>
                   <p className="text-sm text-gray-400">
-                    Todas las tarifas son visibles y predecibles, sin costos ocultos.
+                    All fees are visible and predictable, with no hidden costs.
                   </p>
                 </div>
                 
                 <div className="bg-slate-800/50 p-4 rounded-lg">
-                  <div className="font-medium mb-1">Modelo Pay-as-you-go</div>
+                  <div className="font-medium mb-1">Pay-as-you-go Model</div>
                   <p className="text-sm text-gray-400">
-                    Solo pagas por lo que usas, sin cuotas mensuales fijas.
+                    You only pay for what you use, without fixed monthly fees.
                   </p>
                 </div>
                 
                 <div className="bg-slate-800/50 p-4 rounded-lg">
-                  <div className="font-medium mb-1">Actualizaciones Continuas</div>
+                  <div className="font-medium mb-1">Continuous Updates</div>
                   <p className="text-sm text-gray-400">
-                    Acceso a nuevas funcionalidades y mejoras sin costo adicional.
+                    Access to new features and improvements at no additional cost.
                   </p>
                 </div>
               </div>
@@ -269,14 +269,14 @@ const PricingSection = () => {
           <div className="mt-6 border-t border-slate-700 pt-6 flex items-center justify-between">
             <div className="flex items-center">
               <CreditCard className="h-5 w-5 text-purple-400 mr-2" />
-              <span>Pagos automáticos mediante HBAR desde tu cuenta de Hedera</span>
+              <span>Automatic payments via HBAR from your Hedera account</span>
             </div>
             
             <a 
               href="#preguntas" 
               className="text-blue-400 hover:text-blue-300 transition-colors"
             >
-              Ver preguntas frecuentes
+              View frequently asked questions
             </a>
           </div>
         </div>
