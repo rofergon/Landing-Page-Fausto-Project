@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Cpu, ChevronRight } from 'lucide-react';
+import { ArrowRight, Cpu, ChevronRight, BarChart3, Image } from 'lucide-react';
 
 const CtaSection = () => {
   return (
@@ -12,29 +12,29 @@ const CtaSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
-            Start Exploring SauceSwap with Your Personal Agent
+            Build Your SauceSwap Fausto Agent
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Connect now with your personalized HCS-10 agent and unlock the full potential
-            of SauceSwap and the Hedera DeFi ecosystem. Real-time information, detailed
-            analysis, and intelligent responses to your queries, all in one place.
+            Create your own AI agent that interacts with SauceSwap v2 data on the Hedera network. 
+            Generate real-time charts, analyze token data, and provide DeFi insights through
+            a powerful conversational interface.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="#conectar" 
+              href="https://github.com/rofergon/Fausto_Project-Hedera_HCS-10" 
               className="px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-medium transition-all duration-300 flex items-center justify-center group"
             >
-              Connect with the Agent
+              Get Started on GitHub
               <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
             </a>
             
             <a 
-              href="#documentacion" 
+              href="#iniciar" 
               className="px-8 py-4 rounded-lg bg-slate-700 hover:bg-slate-600 border border-slate-600 text-white font-medium transition-colors flex items-center justify-center"
             >
               <Cpu className="mr-2 h-5 w-5" />
-              View Technical Documentation
+              Installation Guide
             </a>
           </div>
         </div>
@@ -45,17 +45,17 @@ const CtaSection = () => {
               <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-3">
                 <span className="text-blue-400 font-medium">1</span>
               </div>
-              <h3 className="font-semibold text-lg">Connect Your Account</h3>
+              <h3 className="font-semibold text-lg">HCS-10 Integration</h3>
             </div>
             <p className="text-gray-300 mb-4">
-              Establish a secure connection with the HCS-10 agent using your
-              Hedera account and start interacting immediately.
+              Leverage the HCS-10 standard for secure, decentralized communication
+              between agents on the Hedera network.
             </p>
             <a 
-              href="#iniciar" 
+              href="#tecnologia" 
               className="text-blue-400 flex items-center hover:text-blue-300 transition-colors"
             >
-              <span>View getting started guide</span>
+              <span>View architecture details</span>
               <ChevronRight className="h-4 w-4 ml-1" />
             </a>
           </div>
@@ -63,19 +63,19 @@ const CtaSection = () => {
           <div className="bg-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-purple-500/30 transition-all duration-300">
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center mr-3">
-                <span className="text-purple-400 font-medium">2</span>
+                <BarChart3 className="h-5 w-5 text-purple-400" />
               </div>
-              <h3 className="font-semibold text-lg">Explore SauceSwap</h3>
+              <h3 className="font-semibold text-lg">SauceSwap Plugins</h3>
             </div>
             <p className="text-gray-300 mb-4">
-              Access detailed information about pools, tokens, prices, and
-              real-time liquidity to optimize your DeFi decisions.
+              Specialized plugins for accessing SauceSwap data, including
+              pools, tokens, and advanced search capabilities.
             </p>
             <a 
               href="#sauceswap" 
               className="text-purple-400 flex items-center hover:text-purple-300 transition-colors"
             >
-              <span>View SauceSwap capabilities</span>
+              <span>Explore SauceSwap plugins</span>
               <ChevronRight className="h-4 w-4 ml-1" />
             </a>
           </div>
@@ -83,19 +83,19 @@ const CtaSection = () => {
           <div className="bg-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-teal-500/30 transition-all duration-300">
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center mr-3">
-                <span className="text-teal-400 font-medium">3</span>
+                <Image className="h-5 w-5 text-teal-400" />
               </div>
-              <h3 className="font-semibold text-lg">Automate Processes</h3>
+              <h3 className="font-semibold text-lg">Chart Generation</h3>
             </div>
             <p className="text-gray-300 mb-4">
-              Configure custom alerts, continuous monitoring, and
-              notifications to stay up-to-date with the Hedera ecosystem.
+              Generate candlestick charts for any SauceSwap pool with customizable
+              time ranges and permanent storage on Hedera.
             </p>
             <a 
-              href="#precios" 
+              href="#charts" 
               className="text-teal-400 flex items-center hover:text-teal-300 transition-colors"
             >
-              <span>View available plans</span>
+              <span>View chart capabilities</span>
               <ChevronRight className="h-4 w-4 ml-1" />
             </a>
           </div>
@@ -110,25 +110,25 @@ const CtaSection = () => {
             </div>
             
             <div className="flex-1">
-              <h3 className="text-2xl font-bold mb-2 text-center md:text-left">Ready to Power Up Your DeFi Experience?</h3>
+              <h3 className="text-2xl font-bold mb-2 text-center md:text-left">Ready to Build Your Own DeFi Agent?</h3>
               <p className="text-gray-300 mb-4 text-center md:text-left">
-                Join hundreds of users who are already leveraging the power
-                of the HCS-10 Agent to optimize their operations in SauceSwap.
+                Join the community of developers building intelligent agents for the Hedera
+                ecosystem and bring DeFi data to life through conversational AI.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <a 
-                  href="#conectar" 
+                  href="https://github.com/rofergon/Fausto_Project-Hedera_HCS-10" 
                   className="px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-400 hover:to-blue-400 text-white font-medium transition-all duration-300 flex items-center justify-center"
                 >
-                  Start Now
+                  View Source Code
                 </a>
                 
                 <a 
                   href="#iniciar" 
                   className="px-6 py-3 rounded-lg bg-transparent border border-slate-600 hover:border-slate-500 text-white font-medium transition-colors flex items-center justify-center"
                 >
-                  View Demo
+                  Setup Guide
                 </a>
               </div>
             </div>

@@ -8,48 +8,48 @@ const UseCasesSection = () => {
     {
       title: "DeFi Trader",
       icon: <LineChart className="h-6 w-6 text-blue-400" />,
-      description: "Access up-to-date information about pools, liquidity, and prices to make informed decisions in real time.",
+      description: "Access real-time monitoring of pools, liquidity, and prices to make informed trading decisions on SauceSwap.",
       examples: [
         "Real-time price and liquidity monitoring",
         "Analysis of arbitrage opportunities",
         "Alerts of significant changes in pools",
-        "Price history visualization"
+        "Price history visualization with candlestick charts"
       ],
       color: "blue"
     },
     {
       title: "Developer",
       icon: <Code className="h-6 w-6 text-purple-400" />,
-      description: "Integrate the agent into your application to provide updated SauceSwap data to your users.",
+      description: "Leverage integration tools to incorporate SauceSwap data and functionality into your applications.",
       examples: [
-        "API for integration into web/mobile applications",
-        "Monitoring of changes in smart contracts",
+        "API integration into applications",
+        "Monitoring of smart contract changes",
         "Push notifications for users",
-        "Real-time data for dashboards"
+        "Real-time data for dashboards and analytics"
       ],
       color: "purple"
     },
     {
       title: "Market Analyst",
       icon: <BarChart3 className="h-6 w-6 text-teal-400" />,
-      description: "Monitor liquidity and price trends in the Hedera ecosystem.",
+      description: "Monitor and analyze trends within the Hedera ecosystem and SauceSwap to provide valuable market insights.",
       examples: [
         "Analysis of volume and liquidity by pool",
-        "Price trend tracking",
-        "Periodic activity reports",
-        "Comparisons between different tokens"
+        "Price trend tracking and pattern identification",
+        "Detailed token performance reports",
+        "Comparisons across different tokens and time periods"
       ],
       color: "teal"
     },
     {
       title: "Blockchain Educator",
       icon: <GraduationCap className="h-6 w-6 text-indigo-400" />,
-      description: "Use the agent as an educational tool to explain DeFi concepts in Hedera.",
+      description: "Use the agent as an educational tool to explain DeFi concepts in Hedera with practical SauceSwap examples.",
       examples: [
         "Practical examples of DEX operation",
         "Visualization of liquidity concepts and impermanent loss",
-        "Demonstrations of real-time HCS communication",
-        "Case studies for students"
+        "Demonstrations of HCS communication in real-time",
+        "Case studies using real data for students"
       ],
       color: "indigo"
     }
@@ -64,7 +64,7 @@ const UseCasesSection = () => {
           </h2>
           <p className="text-lg text-gray-300">
             Discover how different types of users can leverage the
-            HCS-10 Agent to enhance their experience with SauceSwap and the Hedera ecosystem.
+            Fausto Agent to enhance their experience with SauceSwap and the Hedera ecosystem.
           </p>
         </div>
         

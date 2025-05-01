@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquare, ChevronRight, ArrowRight, Code, Search, Database } from 'lucide-react';
+import { MessageSquare, ChevronRight, ArrowRight, Code, Search, Database, ImageIcon, LineChart } from 'lucide-react';
 
 const QuickStartSection = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -7,9 +7,9 @@ const QuickStartSection = () => {
   
   const examples = [
     "Show me SauceSwap pools",
-    "What are the details of pool #123?",
-    "What information do you have about token 0.0.731861?",
-    "What pools are associated with HBAR?"
+    "Get details of pool #123",
+    "Generate a candlestick chart for HBAR/USDC pool (1 week)",
+    "What does impermanent loss mean for HBAR/SAUCE pool?"
   ];
   
   const handleExampleClick = (example: string) => {
@@ -26,13 +26,12 @@ const QuickStartSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            How to Interact with the Agent
+            How to Run the Project
           </h2>
           <p className="text-lg text-gray-300">
-            Interacting with my HCS-10 agent is simple. You can establish a connection
-            using its Account ID, and start sending messages immediately. The agent
-            will respond intelligently, providing real-time information
-            about SauceSwap, DeFi, and other relevant topics.
+            The Fausto Agent uses LangChain and HCS-10 to provide a powerful
+            interface for interacting with SauceSwap data. Follow these simple
+            steps to get started with your own agent instance.
           </p>
         </div>
         
@@ -54,15 +53,16 @@ const QuickStartSection = () => {
               </div>
               
               <div>
-                <h3 className="font-medium text-xl mb-2">Establish a connection with the agent</h3>
+                <h3 className="font-medium text-xl mb-2">Clone the Repository</h3>
                 <p className="text-gray-400">
-                  Use the agent ID (0.0.XXXXX) to initiate a connection through
-                  any client compatible with HCS-10.
+                  Get the project code from GitHub to start building your Fausto agent.
                 </p>
                 {activeStep === 1 && (
                   <div className="mt-4 bg-slate-800/70 p-4 rounded-lg border border-slate-700">
                     <div className="font-mono text-sm">
-                      <span className="text-blue-400">connect</span>(<span className="text-green-400">"0.0.XXXXX"</span>);
+                      git clone https://github.com/rofergon/Fausto_Project-Hedera_HCS-10.git
+                      <br/>
+                      cd standards-agent-kit
                     </div>
                   </div>
                 )}
@@ -84,18 +84,14 @@ const QuickStartSection = () => {
               </div>
               
               <div>
-                <h3 className="font-medium text-xl mb-2">Wait for automatic confirmation</h3>
+                <h3 className="font-medium text-xl mb-2">Install Dependencies</h3>
                 <p className="text-gray-400">
-                  The agent will automatically process your connection request and
-                  establish a secure communication channel.
+                  Install the required dependencies for the project, including LangChain, Hedera SDK, and chart generation tools.
                 </p>
                 {activeStep === 2 && (
                   <div className="mt-4 bg-slate-800/70 p-4 rounded-lg border border-slate-700">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse"></div>
-                      <span className="font-mono text-sm text-green-400">
-                        Connection established with HCS-10 Agent (0.0.XXXXX)
-                      </span>
+                    <div className="font-mono text-sm">
+                      npm install --legacy-peer-deps
                     </div>
                   </div>
                 )}
@@ -117,15 +113,27 @@ const QuickStartSection = () => {
               </div>
               
               <div>
-                <h3 className="font-medium text-xl mb-2">Start sending queries</h3>
+                <h3 className="font-medium text-xl mb-2">Configure Environment</h3>
                 <p className="text-gray-400">
-                  Send queries about SauceSwap, tokens, or DeFi and receive
-                  detailed responses with up-to-date information.
+                  Set up your environment variables with Hedera credentials and API keys.
                 </p>
                 {activeStep === 3 && (
                   <div className="mt-4 bg-slate-800/70 p-4 rounded-lg border border-slate-700">
                     <div className="font-mono text-sm">
-                      <span className="text-teal-400">sendMessage</span>(<span className="text-green-400">"{exampleQuery}"</span>);
+                      cp .env.sample .env
+                      <br/>
+                      <br/>
+                      <span className="text-gray-400"># Edit .env with your keys:</span>
+                      <br/>
+                      HEDERA_OPERATOR_ID=0.0.xxxxxx
+                      <br/>
+                      HEDERA_OPERATOR_KEY=302e020100...
+                      <br/>
+                      HEDERA_NETWORK=testnet
+                      <br/>
+                      REGISTRY_URL=https://moonscape.tech
+                      <br/>
+                      OPENAI_API_KEY=sk-xxxxxxxxxx
                     </div>
                   </div>
                 )}
@@ -147,38 +155,21 @@ const QuickStartSection = () => {
               </div>
               
               <div>
-                <h3 className="font-medium text-xl mb-2">Receive detailed responses</h3>
+                <h3 className="font-medium text-xl mb-2">Run the Fausto Agent</h3>
                 <p className="text-gray-400">
-                  The agent will process your query and provide you with
-                  detailed responses with real-time data.
+                  Start the agent and choose your operation mode: console or automated.
                 </p>
                 {activeStep === 4 && (
-                  <div className="mt-4 bg-slate-800/70 p-4 rounded-lg border border-slate-700 max-h-40 overflow-y-auto">
-                    <div className="text-sm">
-                      <div className="flex items-center mb-2">
-                        <MessageSquare className="h-4 w-4 text-indigo-400 mr-2" />
-                        <span className="text-indigo-400 font-medium">Agent Response:</span>
-                      </div>
-                      <p>
-                        Here are the main SauceSwap pools sorted by liquidity:
-                      </p>
-                      <ul className="mt-2 space-y-2">
-                        <li className="flex items-center">
-                          <ChevronRight className="h-4 w-4 text-gray-400 mr-1" />
-                          <span>Pool #456: HBAR/USDC - $3.4M liquidity</span>
-                        </li>
-                        <li className="flex items-center">
-                          <ChevronRight className="h-4 w-4 text-gray-400 mr-1" />
-                          <span>Pool #123: HBAR/SAUCE - $1.2M liquidity</span>
-                        </li>
-                        <li className="flex items-center">
-                          <ChevronRight className="h-4 w-4 text-gray-400 mr-1" />
-                          <span>Pool #789: SAUCE/USDC - $850K liquidity</span>
-                        </li>
-                      </ul>
-                      <p className="mt-2">
-                        Would you like detailed information about a specific pool?
-                      </p>
+                  <div className="mt-4 bg-slate-800/70 p-4 rounded-lg border border-slate-700">
+                    <div className="font-mono text-sm">
+                      npm run fausto-agent
+                      <br/>
+                      <br/>
+                      <span className="text-gray-400">? Select mode:</span>
+                      <br/>
+                      <span className="text-white">❯ Automated Mode</span> - Monitor HCS connections
+                      <br/>
+                      <span className="text-gray-400">  Console Mode</span> - Direct interaction
                     </div>
                   </div>
                 )}
@@ -188,7 +179,7 @@ const QuickStartSection = () => {
           
           {/* Right side - Example queries */}
           <div className="bg-slate-900/30 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-            <h3 className="text-xl font-semibold mb-6">Example Queries</h3>
+            <h3 className="text-xl font-semibold mb-6">SauceSwap Plugin Features</h3>
             
             <div className="space-y-4">
               {examples.map((example, index) => (
@@ -204,8 +195,8 @@ const QuickStartSection = () => {
                   <div className="mr-3 flex-shrink-0">
                     {index === 0 && <Search className="h-5 w-5 text-blue-400" />}
                     {index === 1 && <Database className="h-5 w-5 text-purple-400" />}
-                    {index === 2 && <Code className="h-5 w-5 text-teal-400" />}
-                    {index === 3 && <MessageSquare className="h-5 w-5 text-indigo-400" />}
+                    {index === 2 && <ImageIcon className="h-5 w-5 text-teal-400" />}
+                    {index === 3 && <LineChart className="h-5 w-5 text-indigo-400" />}
                   </div>
                   <div className="flex-1">
                     <p>{example}</p>
@@ -217,23 +208,27 @@ const QuickStartSection = () => {
             <div className="mt-8 p-5 bg-gradient-to-br from-blue-900/30 to-indigo-900/30 rounded-lg border border-blue-800/30">
               <h4 className="font-medium text-lg mb-3 flex items-center">
                 <Code className="h-5 w-5 mr-2 text-blue-400" />
-                <span>Integration in your Application</span>
+                <span>LangChain Integration</span>
               </h4>
               
               <p className="text-gray-300 text-sm mb-4">
-                You can also integrate the HCS-10 agent directly into your application
-                using our JavaScript library:
+                The agent uses LangChain to process natural language and interact with SauceSwap data:
               </p>
               
               <div className="bg-slate-900/70 p-4 rounded-lg border border-slate-800 font-mono text-xs overflow-x-auto">
                 <pre className="text-gray-300">
-                  <span className="text-blue-400">import</span> {`{ HCS10Agent }`} <span className="text-blue-400">from</span> <span className="text-green-400">'hcs10-client'</span>;{'\n\n'}
-                  <span className="text-purple-400">const</span> <span className="text-blue-300">agent</span> = <span className="text-blue-400">new</span> <span className="text-yellow-300">HCS10Agent</span>{'();\n\n'}
-                  <span className="text-teal-300">{'// Connect to the agent\n'}</span>
-                  <span className="text-blue-400">await</span> agent.<span className="text-yellow-300">connect</span>(<span className="text-green-400">"0.0.XXXXX"</span>);{'\n\n'}
-                  <span className="text-teal-300">{'// Send query and receive response\n'}</span>
-                  <span className="text-blue-400">const</span> <span className="text-blue-300">response</span> = <span className="text-blue-400">await</span> agent.<span className="text-yellow-300">sendMessage</span>(<span className="text-green-400">"Show me SauceSwap pools"</span>);{'\n\n'}
-                  <span className="text-blue-300">console</span>.<span className="text-yellow-300">log</span>(response);
+                  <span className="text-teal-300">// Initialize LangChain components</span>{'\n'}
+                  <span className="text-blue-400">const</span> <span className="text-blue-300">llm</span> = <span className="text-blue-400">new</span> <span className="text-yellow-300">ChatOpenAI</span>({`{ openAIApiKey, modelName: 'o4-mini' }`});\n
+                  <span className="text-blue-400">const</span> <span className="text-blue-300">memory</span> = <span className="text-blue-400">new</span> <span className="text-yellow-300">ConversationTokenBufferMemory</span>({'\n  '}
+                  <span className="text-blue-300">llm, memoryKey: 'chat_history', maxTokenLimit: 4000</span>{'\n'});{'\n\n'}
+                  <span className="text-teal-300">// Register SauceSwap plugins</span>{'\n'}
+                  <span className="text-blue-400">const</span> <span className="text-blue-300">pluginRegistry</span> = <span className="text-blue-400">new</span> <span className="text-yellow-300">PluginRegistry</span>({'\n  '}
+                  <span className="text-blue-300">pluginContext</span>{'\n'});{'\n'}
+                  <span className="text-blue-400">const</span> <span className="text-blue-300">sauceSwapPlugin</span> = <span className="text-blue-400">new</span> <span className="text-yellow-300">SauceSwapPlugin</span>();{'\n'}
+                  <span className="text-blue-400">await</span> pluginRegistry.<span className="text-yellow-300">registerPlugin</span>(sauceSwapPlugin);{'\n\n'}
+                  <span className="text-teal-300">// Initialize Agent Executor</span>{'\n'}
+                  <span className="text-blue-400">const</span> <span className="text-blue-300">agentExecutor</span> = <span className="text-blue-400">new</span> <span className="text-yellow-300">AgentExecutor</span>({`{`}{'\n  '}
+                  <span className="text-blue-300">agent, tools, memory, maxIterations: 4</span>{'\n'});
                 </pre>
               </div>
               
@@ -242,7 +237,7 @@ const QuickStartSection = () => {
                   href="#documentacion" 
                   className="flex items-center text-blue-400 hover:text-blue-300 transition-colors"
                 >
-                  <span>View complete documentation</span>
+                  <span>View full implementation details</span>
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </div>

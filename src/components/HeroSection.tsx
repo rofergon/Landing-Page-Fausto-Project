@@ -46,11 +46,11 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
-              Intelligent HCS-10 Agent for Hedera
+              SauceSwap Fausto Project
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl">
-              An intelligent solution that combines the security of Hedera Consensus Service with powerful AI capabilities to provide real-time information on SauceSwap, DeFi services, and decentralized communication.
+              An AI agent that uses LangChain to interact with SauceSwap v2 data on the Hedera network, providing real-time information, price charts, analysis, and recommendations for DeFi users.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-2">

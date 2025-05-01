@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart3, Search, Database, RefreshCw } from 'lucide-react';
+import { BarChart3, Search, Database, RefreshCw, LineChart, Image } from 'lucide-react';
 
 const SauceSwapSection = () => {
   const [currentPoolIndex, setCurrentPoolIndex] = useState(0);
@@ -35,12 +35,12 @@ const SauceSwapSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Complete SauceSwap Information
+            SauceSwap Integration
           </h2>
           <p className="text-lg text-gray-300">
-            Access detailed data from the SauceSwap DEX directly through your agent.
-            Check liquidity pools, token details, updated prices, and all the
-            information needed to make informed decisions in the Hedera DeFi ecosystem.
+            The Fausto agent provides comprehensive access to SauceSwap data through specialized plugins, 
+            allowing you to explore pools, analyze tokens, and visualize price trends with real-time 
+            candlestick charts that can be shared through Hedera storage.
           </p>
         </div>
         
@@ -52,21 +52,21 @@ const SauceSwapSection = () => {
                 <BarChart3 className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Pool Exploration</h3>
+                <h3 className="font-medium text-xl mb-2">SauceSwap Plugins</h3>
                 <p className="text-gray-400">
-                  Paginated exploration of SauceSwap pools with complete details on liquidity, tokens, and reserves.
+                  Access pools and tokens with specialized plugins like get_sauceswap_pools, get_sauceswap_pool_details, get_sauceswap_token_details, and get_sauceswap_associated_pools.
                 </p>
               </div>
             </div>
             
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 bg-purple-500/20 p-3 rounded-lg text-purple-400">
-                <Search className="h-6 w-6" />
+                <Image className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Token Information</h3>
+                <h3 className="font-medium text-xl mb-2">Price Charts</h3>
                 <p className="text-gray-400">
-                  Complete details about any token including current price, description, and social links.
+                  Generate candlestick charts for any SauceSwap pool with customizable time ranges, price inversion, and high-quality visualization using the CandlestickPlugin.
                 </p>
               </div>
             </div>
@@ -76,21 +76,21 @@ const SauceSwapSection = () => {
                 <Database className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Advanced Search</h3>
+                <h3 className="font-medium text-xl mb-2">Hedera Integration</h3>
                 <p className="text-gray-400">
-                  Find pools associated with a specific token or search by liquidity and volume ranges.
+                  Charts can be permanently stored on Hedera using HCS-3 inscriptions, generating Hedera Resource Locator (HRL) links that can be shared in conversations.
                 </p>
               </div>
             </div>
             
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 bg-indigo-500/20 p-3 rounded-lg text-indigo-400">
-                <RefreshCw className="h-6 w-6" />
+                <LineChart className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-medium text-xl mb-2">Real-Time Data</h3>
+                <h3 className="font-medium text-xl mb-2">Advanced Analysis</h3>
                 <p className="text-gray-400">
-                  Constantly updated information with compatibility for Hedera mainnet and testnet.
+                  The agent can analyze data, provide recommendations, and explain how to interpret information, making DeFi data accessible to all users regardless of experience level.
                 </p>
               </div>
             </div>
