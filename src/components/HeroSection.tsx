@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Activity, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
-  const [isActive, setIsActive] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
-    // Simulate activity status changing
-    const interval = setInterval(() => {
-      setIsActive(prev => !prev);
-    }, 5000);
-    
     // Animation on load
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
     
     return () => {
-      clearInterval(interval);
       clearTimeout(timer);
     };
   }, []);
@@ -36,25 +29,6 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className={`flex flex-col items-center text-center transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            
-            {/* Status indicator */}
-            <div className="mb-6">
-              <div className="flex items-center px-4 py-2 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700">
-                <div className={`w-2 h-2 rounded-full mr-2 ${isActive ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`}></div>
-                <a 
-                  href="https://hashscan.io/testnet/account/0.0.5932173?pc=1&ps=1&pt=1&pf=1&pa=1&pr=1&ph=1&pn=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium hover:text-blue-400 transition-colors duration-200 flex items-center"
-                >
-                  Active Agent | Network: Testnet | ID: 0.0.5932173
-                  <Activity className="ml-2 h-4 w-4 opacity-60" />
-                </a>
-              </div>
-              <p className="text-xs text-gray-400/70 mt-2 italic text-center">
-                Click to view agent details on HashScan ↗
-              </p>
-            </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
               SauceSwap Fausto Project
@@ -77,7 +51,6 @@ const HeroSection = () => {
                 href="#tecnologia" 
                 className="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium transition-colors flex items-center justify-center"
               >
-                <Activity className="mr-2 h-5 w-5" />
                 Explore Capabilities
               </a>
             </div>

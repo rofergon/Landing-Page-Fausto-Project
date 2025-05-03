@@ -170,22 +170,6 @@ Pool ID | Pair | Liquidity | Token % | Volume 24h
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMDIwMjAiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHYtMXptMC05aDR2MWgtNHYtMXptMC05aDR2MWgtNHYtMXptMC05aDR2MWgtNHYtMXptMC05aDR2MWgtNHYtMXpNMjAgMzRoNHYxaC00di0xem0wLTloNHYxaC00di0xem0wLTloNHYxaC00di0xem0wLTloNHYxaC00di0xem0wLTloNHYxaC00di0xek00IDM0aDR2MUg0di0xem0wLTloNHYxSDR2LTF6bTAtOWg0djFINHYtMXptMC05aDR2MUg0di0xem0wLTloNHYxSDR2LTF6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center mb-8">
-          <div className="bg-slate-700/50 rounded-full px-4 py-2 mb-4">
-            <a 
-              href="https://hashscan.io/testnet/account/0.0.5932173?pc=1&ps=1&pt=1&pf=1&pa=1&pr=1&ph=1&pn=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 flex items-center"
-            >
-              Active Agent | Network: Testnet | ID: 0.0.5932173
-              <Activity className="ml-2 h-4 w-4 opacity-60" />
-            </a>
-          </div>
-          <p className="text-xs text-gray-400/70 italic">
-            Click to view agent details on HashScan ↗
-          </p>
-        </div>
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             SauceSwap Plugin System

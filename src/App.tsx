@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import AgentStatusBanner from './components/AgentStatusBanner';
 import TechnologySection from './components/TechnologySection';
 import SauceSwapSection from './components/SauceSwapSection';
 import CommunicationSection from './components/CommunicationSection';
@@ -21,6 +22,7 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
+        <AgentStatusBanner />
         <TechnologySection />
         <SauceSwapSection />
         <CommunicationSection />
