@@ -1,9 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { BarChart3, Search, Database, RefreshCw, LineChart, Image, Terminal, Globe, Activity, ExternalLink, Package, Layers, Code, Server, Upload, Link2 } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { BarChart3, Search, Database, RefreshCw, LineChart, Image, Terminal, Globe, Activity, ExternalLink, Package, Layers, Code, Server, Upload, Link2, ChevronDown, ChevronUp, Info, Zap, List, FileText } from 'lucide-react';
 
 const SauceSwapSection = () => {
   const [currentPoolIndex, setCurrentPoolIndex] = useState(0);
   const [animateChart, setAnimateChart] = useState(false);
+  
+  // Estado para los desplegables
+  const [expandedPlugin, setExpandedPlugin] = useState<string | null>(null);
+  
+  // Referencia al contenedor de la cuadrícula
+  const gridContainerRef = useRef<HTMLDivElement>(null);
+  
+  // Función para alternar la expansión de un plugin
+  const togglePlugin = (pluginId: string) => {
+    if (expandedPlugin === pluginId) {
+      setExpandedPlugin(null);
+    } else {
+      setExpandedPlugin(pluginId);
+    }
+  };
   
   // Sample pool data based on SauceSwap plugin system report
   const pools = [
@@ -11,6 +26,139 @@ const SauceSwapSection = () => {
     { id: 2, name: 'HBAR/SAUCE', liquidity: '$1.2M', tokenA: 'HBAR', priceA: '$0.08', tokenB: 'SAUCE', priceB: '$0.0145', reserveA: '8.3M HBAR', reserveB: '69.5M SAUCE' },
     { id: 3, name: 'USDC/HSuite', liquidity: '$850K', tokenA: 'USDC', priceA: '$1.00', tokenB: 'HSuite', priceB: '$0.004', reserveA: '850K USDC', reserveB: '212.5M HSuite' },
   ];
+  
+  // Datos de implementación para cada plugin
+  const pluginDetails = {
+    poolList: {
+      title: "Pool List Plugin",
+      icon: <List className="h-4 w-4 mr-1" />,
+      color: "purple",
+      description: "Query all available pools with pagination support",
+      implementation: [
+        "Retrieves pool data from SauceSwap DEX on Hedera",
+        "Organizes information in tabular format with pagination (10 pools per page)",
+        "Includes data such as ID, token pairs, prices, and liquidity",
+        "Supports filtering by parameters like minimum volume or specific token"
+      ],
+      code: `
+// Example plugin usage
+const pools = await getSauceSwapPoolsTool._call({ 
+  network: 'mainnet', 
+  page: 1 
+});`,
+      output: `
+SauceSwap Pools (mainnet) - Page 1/5 (Total: 42)
+
+ID | Pair | Token Prices | LP Price
+---|------|-------------|--------
+1 | HBAR-USDC | HBAR: $0.08, USDC: $1.00 | $24.37
+2 | HBAR-SAUCE | HBAR: $0.08, SAUCE: $0.0145 | $0.89
+3 | USDC-HSuite | USDC: $1.00, HSuite: $0.004 | $0.12
+...`
+    },
+    poolDetails: {
+      title: "Pool Details Plugin",
+      icon: <Search className="h-4 w-4 mr-1" />,
+      color: "blue",
+      description: "Provides detailed information about a specific pool by ID",
+      implementation: [
+        "Retrieves complete data for a specific pool using its ID",
+        "Includes information about reserves, liquidity, tokens, and prices",
+        "Provides detailed metrics such as APR, volume, and pool fee",
+        "Allows access to recent transaction history of the pool"
+      ],
+      code: `
+// Example plugin usage
+const poolDetails = await getSauceSwapPoolDetailsTool._call({
+  network: 'mainnet',
+  poolId: 5
+});`,
+      output: `
+{
+  "id": 5,
+  "contractId": "0.0.1234567",
+  "pair": "HBAR-USDC",
+  "lpToken": {
+    "symbol": "HBAR-USDC-LP",
+    "priceUsd": 24.37,
+    "totalReserve": "12345678"
+  },
+  "tokens": {
+    "HBAR": {
+      "id": "0.0.1234",
+      "priceUsd": 0.08,
+      "reserve": "123456789"
+    },
+    "USDC": {
+      "id": "0.0.456789",
+      "priceUsd": 1.0,
+      "reserve": "9876543"
+    }
+  }
+}`
+    },
+    tokenDetails: {
+      title: "Token Details Plugin",
+      icon: <FileText className="h-4 w-4 mr-1" />,
+      color: "teal",
+      description: "Query comprehensive information about a specific token",
+      implementation: [
+        "Retrieves detailed token data from the Hedera network",
+        "Provides information such as price, supply, and market cap",
+        "Includes metadata like website, description, and social links",
+        "Offers price history and token volume metrics"
+      ],
+      code: `
+// Example plugin usage
+const tokenDetails = await getSauceSwapTokenDetailsTool._call({
+  network: 'mainnet',
+  tokenId: 'tokenIdOfSAUCE'
+});`,
+      output: `
+{
+  "id": "0.0.123456",
+  "symbol": "SAUCE",
+  "name": "SauceSwap Token",
+  "decimals": 8,
+  "priceUsd": 0.0145,
+  "totalSupply": "1000000000",
+  "website": "https://sauceswap.io",
+  "description": "Governance token for the SauceSwap DEX",
+  "socialLinks": {
+    "twitter": "https://twitter.com/sauceswap",
+    "telegram": "https://t.me/sauceswap"
+  }
+}`
+    },
+    associatedPools: {
+      title: "Associated Pools Plugin",
+      icon: <Zap className="h-4 w-4 mr-1" />,
+      color: "indigo",
+      description: "Find all pools containing a specific token",
+      implementation: [
+        "Searches for all pools where a specific token is present",
+        "Sorts results by liquidity, volume, or creation date",
+        "Provides data on token participation in each pool",
+        "Allows comparison of metrics between different pools of the same token"
+      ],
+      code: `
+// Example plugin usage
+const tokenPools = await getSauceSwapAssociatedPoolsTool._call({
+  network: 'mainnet',
+  tokenId: 'tokenIdOfSAUCE'
+});`,
+      output: `
+Associated Pools for SAUCE (0.0.123456) - Total: 5
+
+Pool ID | Pair | Liquidity | Token % | Volume 24h
+--------|------|-----------|---------|----------
+2 | HBAR-SAUCE | $1.2M | 65% | $243K
+7 | USDC-SAUCE | $850K | 85% | $156K
+12 | SAUCE-HSUITE | $340K | 42% | $89K
+18 | SAUCE-HBARS | $125K | 38% | $34K
+24 | ETH-SAUCE | $78K | 15% | $12K`
+    }
+  };
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,64 +191,258 @@ const SauceSwapSection = () => {
           </p>
         </div>
         
-        {/* Visual Plugin Architecture */}
-        <div className="bg-slate-700/30 backdrop-blur-sm p-6 rounded-xl border border-slate-600 mb-16">
+        {/* Visual Plugin Architecture - Increased width */}
+        <div className="bg-slate-700/30 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-slate-600 mb-16 max-w-[1400px] mx-auto">
           <h3 className="text-xl font-semibold mb-6 text-center">Plugin Architecture</h3>
           
-          <div className="relative max-w-3xl mx-auto">
+          {/* Expanded container */}
+          <div className="relative w-full mx-auto">
             {/* Main Plugin Container */}
-            <div className="border border-blue-500/50 rounded-lg p-4 bg-slate-800/70 mb-3">
-              <div className="flex items-center justify-center gap-2 mb-4 text-blue-400">
+            <div className="border border-blue-500/50 rounded-lg p-4 md:p-6 bg-slate-800/70 mb-3">
+              <div className="flex items-center justify-center gap-2 mb-6 text-blue-400">
                 <Package className="h-5 w-5" />
-                <span className="font-medium">SauceSwap Plugin System</span>
+                <span className="font-medium text-lg">SauceSwap Plugin System</span>
               </div>
               
-              {/* Plugin Row */}
-              <div className="grid grid-cols-4 gap-2 mb-6">
-                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
-                  <div className="flex items-center justify-center text-purple-400 mb-1">
-                    <Layers className="h-4 w-4 mr-1" />
-                  </div>
-                  <p className="text-xs text-gray-300">Pool List Plugin</p>
+              {/* Plugin Row - Increased gap and spacing - Ahora con posicionamiento relativo */}
+              <div ref={gridContainerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8 relative">
+                {/* Pool List Plugin */}
+                <div className={`bg-slate-700/80 border border-purple-500/30 rounded-lg overflow-hidden ${expandedPlugin === 'poolList' ? 'z-10' : ''}`}>
+                  <button 
+                    onClick={() => togglePlugin('poolList')}
+                    className="w-full p-3 md:p-4 flex items-center justify-between text-left hover:bg-slate-600/30 transition-colors duration-200"
+                  >
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-purple-500/20 p-1.5 rounded-md text-purple-400 mr-2">
+                        <Layers className="h-5 w-5" />
+                      </div>
+                      <span className="font-medium text-gray-200">Pool List Plugin</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="animate-pulse bg-purple-500/30 rounded-full h-2 w-2 mr-2"></div>
+                      {expandedPlugin === 'poolList' ? (
+                        <ChevronUp className="h-4 w-4 text-purple-400" />
+                      ) : (
+                        <ChevronDown className="h-4 w-4 text-purple-400" />
+                      )}
+                    </div>
+                  </button>
                 </div>
                 
-                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
-                  <div className="flex items-center justify-center text-purple-400 mb-1">
-                    <Layers className="h-4 w-4 mr-1" />
-                  </div>
-                  <p className="text-xs text-gray-300">Pool Details Plugin</p>
+                {/* Pool Details Plugin */}
+                <div className={`bg-slate-700/80 border border-blue-500/30 rounded-lg overflow-hidden ${expandedPlugin === 'poolDetails' ? 'z-10' : ''}`}>
+                  <button 
+                    onClick={() => togglePlugin('poolDetails')}
+                    className="w-full p-3 md:p-4 flex items-center justify-between text-left hover:bg-slate-600/30 transition-colors duration-200"
+                  >
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-blue-500/20 p-1.5 rounded-md text-blue-400 mr-2">
+                        <Search className="h-5 w-5" />
+                      </div>
+                      <span className="font-medium text-gray-200">Pool Details Plugin</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="animate-pulse bg-blue-500/30 rounded-full h-2 w-2 mr-2"></div>
+                      {expandedPlugin === 'poolDetails' ? (
+                        <ChevronUp className="h-4 w-4 text-blue-400" />
+                      ) : (
+                        <ChevronDown className="h-4 w-4 text-blue-400" />
+                      )}
+                    </div>
+                  </button>
                 </div>
                 
-                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
-                  <div className="flex items-center justify-center text-purple-400 mb-1">
-                    <Layers className="h-4 w-4 mr-1" />
-                  </div>
-                  <p className="text-xs text-gray-300">Token Details Plugin</p>
+                {/* Token Details Plugin */}
+                <div className={`bg-slate-700/80 border border-teal-500/30 rounded-lg overflow-hidden ${expandedPlugin === 'tokenDetails' ? 'z-10' : ''}`}>
+                  <button 
+                    onClick={() => togglePlugin('tokenDetails')}
+                    className="w-full p-3 md:p-4 flex items-center justify-between text-left hover:bg-slate-600/30 transition-colors duration-200"
+                  >
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-teal-500/20 p-1.5 rounded-md text-teal-400 mr-2">
+                        <FileText className="h-5 w-5" />
+                      </div>
+                      <span className="font-medium text-gray-200">Token Details Plugin</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="animate-pulse bg-teal-500/30 rounded-full h-2 w-2 mr-2"></div>
+                      {expandedPlugin === 'tokenDetails' ? (
+                        <ChevronUp className="h-4 w-4 text-teal-400" />
+                      ) : (
+                        <ChevronDown className="h-4 w-4 text-teal-400" />
+                      )}
+                    </div>
+                  </button>
                 </div>
                 
-                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
-                  <div className="flex items-center justify-center text-purple-400 mb-1">
-                    <Layers className="h-4 w-4 mr-1" />
-                  </div>
-                  <p className="text-xs text-gray-300">Associated Pools Plugin</p>
+                {/* Associated Pools Plugin */}
+                <div className={`bg-slate-700/80 border border-indigo-500/30 rounded-lg overflow-hidden ${expandedPlugin === 'associatedPools' ? 'z-10' : ''}`}>
+                  <button 
+                    onClick={() => togglePlugin('associatedPools')}
+                    className="w-full p-3 md:p-4 flex items-center justify-between text-left hover:bg-slate-600/30 transition-colors duration-200"
+                  >
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-indigo-500/20 p-1.5 rounded-md text-indigo-400 mr-2">
+                        <Zap className="h-5 w-5" />
+                      </div>
+                      <span className="font-medium text-gray-200">Associated Pools Plugin</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="animate-pulse bg-indigo-500/30 rounded-full h-2 w-2 mr-2"></div>
+                      {expandedPlugin === 'associatedPools' ? (
+                        <ChevronUp className="h-4 w-4 text-indigo-400" />
+                      ) : (
+                        <ChevronDown className="h-4 w-4 text-indigo-400" />
+                      )}
+                    </div>
+                  </button>
                 </div>
               </div>
+
+              {/* Contenido desplegable - Ahora fuera del grid para mejor posicionamiento */}
+              {expandedPlugin === 'poolList' && (
+                <div className="bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg p-4 md:p-5 mb-8 shadow-lg">
+                  <p className="text-gray-300 mb-3 flex items-start">
+                    <Info className="h-4 w-4 text-purple-400 mr-2 mt-1 flex-shrink-0" />
+                    {pluginDetails.poolList.description}
+                  </p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-purple-400 mb-2">Implementation:</h4>
+                    <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1.5">
+                      {pluginDetails.poolList.implementation.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-purple-400 mb-2">Code Example:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto">
+                      {pluginDetails.poolList.code}
+                    </pre>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-purple-400 mb-2">Output:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto whitespace-pre-wrap">
+                      {pluginDetails.poolList.output}
+                    </pre>
+                  </div>
+                </div>
+              )}
               
-              {/* Candlestick Chart Plugin */}
-              <div className="border border-green-500/50 rounded-lg p-3 bg-slate-700/50">
-                <div className="flex items-center justify-center gap-1 mb-3 text-green-400">
+              {expandedPlugin === 'poolDetails' && (
+                <div className="bg-slate-800/90 backdrop-blur-sm border border-blue-500/30 rounded-lg p-4 md:p-5 mb-8 shadow-lg">
+                  <p className="text-gray-300 mb-3 flex items-start">
+                    <Info className="h-4 w-4 text-blue-400 mr-2 mt-1 flex-shrink-0" />
+                    {pluginDetails.poolDetails.description}
+                  </p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-blue-400 mb-2">Implementation:</h4>
+                    <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1.5">
+                      {pluginDetails.poolDetails.implementation.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-blue-400 mb-2">Code Example:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto">
+                      {pluginDetails.poolDetails.code}
+                    </pre>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-blue-400 mb-2">Output:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto whitespace-pre-wrap">
+                      {pluginDetails.poolDetails.output}
+                    </pre>
+                  </div>
+                </div>
+              )}
+              
+              {expandedPlugin === 'tokenDetails' && (
+                <div className="bg-slate-800/90 backdrop-blur-sm border border-teal-500/30 rounded-lg p-4 md:p-5 mb-8 shadow-lg">
+                  <p className="text-gray-300 mb-3 flex items-start">
+                    <Info className="h-4 w-4 text-teal-400 mr-2 mt-1 flex-shrink-0" />
+                    {pluginDetails.tokenDetails.description}
+                  </p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-teal-400 mb-2">Implementation:</h4>
+                    <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1.5">
+                      {pluginDetails.tokenDetails.implementation.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-teal-400 mb-2">Code Example:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto">
+                      {pluginDetails.tokenDetails.code}
+                    </pre>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-teal-400 mb-2">Output:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto whitespace-pre-wrap">
+                      {pluginDetails.tokenDetails.output}
+                    </pre>
+                  </div>
+                </div>
+              )}
+              
+              {expandedPlugin === 'associatedPools' && (
+                <div className="bg-slate-800/90 backdrop-blur-sm border border-indigo-500/30 rounded-lg p-4 md:p-5 mb-8 shadow-lg">
+                  <p className="text-gray-300 mb-3 flex items-start">
+                    <Info className="h-4 w-4 text-indigo-400 mr-2 mt-1 flex-shrink-0" />
+                    {pluginDetails.associatedPools.description}
+                  </p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-indigo-400 mb-2">Implementation:</h4>
+                    <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1.5">
+                      {pluginDetails.associatedPools.implementation.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-indigo-400 mb-2">Code Example:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto">
+                      {pluginDetails.associatedPools.code}
+                    </pre>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-indigo-400 mb-2">Output:</h4>
+                    <pre className="bg-slate-900/70 p-3 rounded text-xs text-gray-300 overflow-x-auto whitespace-pre-wrap">
+                      {pluginDetails.associatedPools.output}
+                    </pre>
+                  </div>
+                </div>
+              )}
+              
+              {/* Candlestick Chart Plugin - Increased spacing */}
+              <div className="border border-green-500/50 rounded-lg p-4 md:p-6 bg-slate-700/50">
+                <div className="flex items-center justify-center gap-2 mb-4 text-green-400">
                   <BarChart3 className="h-5 w-5" />
                   <span className="font-medium">Candlestick Chart Plugin</span>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                   {/* Chart Generation */}
-                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-2">
-                    <div className="flex items-center justify-center text-green-400 mb-2">
+                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-3 md:p-4">
+                    <div className="flex items-center justify-center text-green-400 mb-3">
                       <Activity className="h-4 w-4 mr-1" />
                       <span className="text-xs font-medium">Chart Generation</span>
                     </div>
-                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 text-center">
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-2.5 text-center">
                       <div className="flex items-center justify-center text-green-400 mb-1">
                         <Code className="h-3 w-3 mr-1" />
                       </div>
@@ -109,12 +451,12 @@ const SauceSwapSection = () => {
                   </div>
                   
                   {/* Data Retrieval */}
-                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-2">
-                    <div className="flex items-center justify-center text-green-400 mb-2">
+                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-3 md:p-4">
+                    <div className="flex items-center justify-center text-green-400 mb-3">
                       <Database className="h-4 w-4 mr-1" />
                       <span className="text-xs font-medium">Data Retrieval</span>
                     </div>
-                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 text-center">
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-2.5 text-center">
                       <div className="flex items-center justify-center text-green-400 mb-1">
                         <Server className="h-3 w-3 mr-1" />
                       </div>
@@ -123,18 +465,18 @@ const SauceSwapSection = () => {
                   </div>
                   
                   {/* Hedera Integration */}
-                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-2">
-                    <div className="flex items-center justify-center text-green-400 mb-2">
+                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-3 md:p-4">
+                    <div className="flex items-center justify-center text-green-400 mb-3">
                       <Globe className="h-4 w-4 mr-1" />
                       <span className="text-xs font-medium">Hedera Integration</span>
                     </div>
-                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 mb-1">
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-2 mb-2">
                       <p className="text-xs text-gray-300 text-center">HCS-3 Inscription</p>
                     </div>
-                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 mb-1">
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-2 mb-2">
                       <p className="text-xs text-gray-300 text-center">Image Upload</p>
                     </div>
-                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5">
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-2">
                       <div className="flex items-center justify-center text-green-400">
                         <Link2 className="h-3 w-3 mr-1" />
                         <p className="text-xs text-gray-300">HRL Generation</p>
