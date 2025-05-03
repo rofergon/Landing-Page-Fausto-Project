@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,11 +40,13 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <a 
-                href="#conectar" 
+                href="https://github.com/rofergon/Fausto_Project-Hedera_HCS-10"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-400 hover:to-blue-400 text-white font-medium transition-all duration-300 flex items-center justify-center group"
               >
-                Connect with my Agent
-                <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
+                View on GitHub
+                <Github className="ml-2 h-5 w-5 transform group-hover:scale-110 transition-transform" />
               </a>
               
               <a 
