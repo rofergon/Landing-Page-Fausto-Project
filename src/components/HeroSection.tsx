@@ -38,11 +38,22 @@ const HeroSection = () => {
           <div className={`flex flex-col items-center text-center transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             
             {/* Status indicator */}
-            <div className="mb-6 flex items-center px-4 py-2 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700">
-              <div className={`w-2 h-2 rounded-full mr-2 ${isActive ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`}></div>
-              <span className="text-sm font-medium">
-                Active Agent | Network: Testnet | ID: 0.0.XXXXX
-              </span>
+            <div className="mb-6">
+              <div className="flex items-center px-4 py-2 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700">
+                <div className={`w-2 h-2 rounded-full mr-2 ${isActive ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`}></div>
+                <a 
+                  href="https://hashscan.io/testnet/account/0.0.5932173?pc=1&ps=1&pt=1&pf=1&pa=1&pr=1&ph=1&pn=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium hover:text-blue-400 transition-colors duration-200 flex items-center"
+                >
+                  Active Agent | Network: Testnet | ID: 0.0.5932173
+                  <Activity className="ml-2 h-4 w-4 opacity-60" />
+                </a>
+              </div>
+              <p className="text-xs text-gray-400/70 mt-2 italic text-center">
+                Click to view agent details on HashScan ↗
+              </p>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
