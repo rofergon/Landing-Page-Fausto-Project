@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart3, Search, Database, RefreshCw, LineChart, Image, Terminal, Globe, Activity, ExternalLink } from 'lucide-react';
+import { BarChart3, Search, Database, RefreshCw, LineChart, Image, Terminal, Globe, Activity, ExternalLink, Package, Layers, Code, Server, Upload, Link2 } from 'lucide-react';
 
 const SauceSwapSection = () => {
   const [currentPoolIndex, setCurrentPoolIndex] = useState(0);
@@ -43,29 +43,107 @@ const SauceSwapSection = () => {
           </p>
         </div>
         
+        {/* Visual Plugin Architecture */}
         <div className="bg-slate-700/30 backdrop-blur-sm p-6 rounded-xl border border-slate-600 mb-16">
-          <h3 className="text-xl font-semibold mb-4 text-center">Plugin Architecture</h3>
-          <div className="overflow-x-auto">
-            <pre className="text-xs md:text-sm text-gray-300 bg-slate-800/70 p-4 rounded-lg">
-{`┌─────────────────────────────────────────────────────────────────┐
-│                      SauceSwap Plugin System                    │
-├───────────────┬─────────────────┬──────────────┬────────────────┤
-│ Pool List     │ Pool Details    │ Token Details│ Associated     │
-│ Plugin        │ Plugin          │ Plugin       │ Pools Plugin   │
-├───────────────┴─────────────────┴──────────────┴────────────────┤
-│                                                                 │
-│                     Candlestick Chart Plugin                    │
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐  │
-│  │ Chart       │  │ Data        │  │ Hedera Integration      │  │
-│  │ Generation  │  │ Retrieval   │  │ ┌─────────────────────┐ │  │
-│  │ ┌─────────┐ │  │ ┌─────────┐ │  │ │ HCS-3 Inscription   │ │  │
-│  │ │ Canvas  │ │  │ │ API     │ │  │ │ Image Upload        │ │  │
-│  │ │ Renderer│ │  │ │ Client  │ │  │ │ HRL Generation      │ │  │
-│  │ └─────────┘ │  │ └─────────┘ │  │ └─────────────────────┘ │  │
-│  └─────────────┘  └─────────────┘  └─────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘`}
-            </pre>
+          <h3 className="text-xl font-semibold mb-6 text-center">Plugin Architecture</h3>
+          
+          <div className="relative max-w-3xl mx-auto">
+            {/* Main Plugin Container */}
+            <div className="border border-blue-500/50 rounded-lg p-4 bg-slate-800/70 mb-3">
+              <div className="flex items-center justify-center gap-2 mb-4 text-blue-400">
+                <Package className="h-5 w-5" />
+                <span className="font-medium">SauceSwap Plugin System</span>
+              </div>
+              
+              {/* Plugin Row */}
+              <div className="grid grid-cols-4 gap-2 mb-6">
+                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
+                  <div className="flex items-center justify-center text-purple-400 mb-1">
+                    <Layers className="h-4 w-4 mr-1" />
+                  </div>
+                  <p className="text-xs text-gray-300">Pool List Plugin</p>
+                </div>
+                
+                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
+                  <div className="flex items-center justify-center text-purple-400 mb-1">
+                    <Layers className="h-4 w-4 mr-1" />
+                  </div>
+                  <p className="text-xs text-gray-300">Pool Details Plugin</p>
+                </div>
+                
+                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
+                  <div className="flex items-center justify-center text-purple-400 mb-1">
+                    <Layers className="h-4 w-4 mr-1" />
+                  </div>
+                  <p className="text-xs text-gray-300">Token Details Plugin</p>
+                </div>
+                
+                <div className="bg-slate-700/80 border border-purple-500/30 rounded p-2 text-center">
+                  <div className="flex items-center justify-center text-purple-400 mb-1">
+                    <Layers className="h-4 w-4 mr-1" />
+                  </div>
+                  <p className="text-xs text-gray-300">Associated Pools Plugin</p>
+                </div>
+              </div>
+              
+              {/* Candlestick Chart Plugin */}
+              <div className="border border-green-500/50 rounded-lg p-3 bg-slate-700/50">
+                <div className="flex items-center justify-center gap-1 mb-3 text-green-400">
+                  <BarChart3 className="h-5 w-5" />
+                  <span className="font-medium">Candlestick Chart Plugin</span>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-3">
+                  {/* Chart Generation */}
+                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-2">
+                    <div className="flex items-center justify-center text-green-400 mb-2">
+                      <Activity className="h-4 w-4 mr-1" />
+                      <span className="text-xs font-medium">Chart Generation</span>
+                    </div>
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 text-center">
+                      <div className="flex items-center justify-center text-green-400 mb-1">
+                        <Code className="h-3 w-3 mr-1" />
+                      </div>
+                      <p className="text-xs text-gray-300">Canvas Renderer</p>
+                    </div>
+                  </div>
+                  
+                  {/* Data Retrieval */}
+                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-2">
+                    <div className="flex items-center justify-center text-green-400 mb-2">
+                      <Database className="h-4 w-4 mr-1" />
+                      <span className="text-xs font-medium">Data Retrieval</span>
+                    </div>
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 text-center">
+                      <div className="flex items-center justify-center text-green-400 mb-1">
+                        <Server className="h-3 w-3 mr-1" />
+                      </div>
+                      <p className="text-xs text-gray-300">API Client</p>
+                    </div>
+                  </div>
+                  
+                  {/* Hedera Integration */}
+                  <div className="bg-slate-800/90 border border-green-500/30 rounded p-2">
+                    <div className="flex items-center justify-center text-green-400 mb-2">
+                      <Globe className="h-4 w-4 mr-1" />
+                      <span className="text-xs font-medium">Hedera Integration</span>
+                    </div>
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 mb-1">
+                      <p className="text-xs text-gray-300 text-center">HCS-3 Inscription</p>
+                    </div>
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5 mb-1">
+                      <p className="text-xs text-gray-300 text-center">Image Upload</p>
+                    </div>
+                    <div className="bg-slate-700/80 border border-green-500/20 rounded p-1.5">
+                      <div className="flex items-center justify-center text-green-400">
+                        <Link2 className="h-3 w-3 mr-1" />
+                        <p className="text-xs text-gray-300">HRL Generation</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
